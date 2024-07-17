@@ -1,12 +1,10 @@
 package com.example.team_project.enumerated;
 
-public class SecureBankEnum {
+public class BankingEnum {
 
     public enum AccountType {
         CHECKING,
         SAVINGS,
-        EMPLOYEE,
-        CUSTOMERS
     }
 
     public enum AccountStatus {
