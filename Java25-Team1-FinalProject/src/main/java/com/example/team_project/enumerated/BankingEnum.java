@@ -5,6 +5,8 @@ public class BankingEnum {
     public enum AccountType {
         CHECKING,
         SAVINGS,
+        CREDIT_CARD,
+        LOAN
     }
 
     public enum AccountStatus {
