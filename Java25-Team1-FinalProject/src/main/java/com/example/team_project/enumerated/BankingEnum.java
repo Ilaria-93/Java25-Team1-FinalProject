@@ -41,4 +41,10 @@ public class BankingEnum {
         SMS,
         PUSH_NOTIFICATION
     }
+
+    public enum DocumentType {
+        IDENTITY_CARD,
+        PASSPORT,
+        DRIVER_LICENSE
+    }
 }

@@ -28,24 +28,24 @@ public class BankAccount {
     @Column(nullable = false)
     private BigDecimal balance;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
-
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
     @Column(nullable = false)
     private LocalDateTime updatedAt;
 
-
     public BankAccount() {
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
-        this.balance = BigDecimal.ZERO;
-        this.status = BankingEnum.AccountStatus.ACTIVE;
     }
 
+    public BankAccount(Integer id, String accountNumber, BankingEnum.AccountType accountType, BankingEnum.AccountStatus status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user) {
+        this.id = id;
+        this.accountNumber = accountNumber;
+        this.accountType = accountType;
+        this.status = status;
+        this.balance = balance;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 
     public Integer getId() {
         return id;
@@ -87,16 +87,12 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
     public LocalDateTime getUpdatedAt() {
@@ -108,7 +104,7 @@ public class BankAccount {
     }
 
 
-   // Utility methods
+    // Utility methods
     public void deposit(BigDecimal amount) {
         this.balance = this.balance.add(amount);
         this.updatedAt = LocalDateTime.now();

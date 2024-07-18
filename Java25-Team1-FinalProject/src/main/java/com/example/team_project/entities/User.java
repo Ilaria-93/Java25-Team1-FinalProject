@@ -3,9 +3,6 @@ package com.example.team_project.entities;
 import com.example.team_project.enumerated.BankingEnum;
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -16,45 +13,31 @@ public class User {
     private Integer id;
 
     @Column(nullable = false, unique = true)
-    private String username;
-
-    @Column(nullable = false)
-    private String password;
-
-    @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(name = "full_name", nullable = false)
-    private String fullName;
+    @Column(name = "first_name", nullable = false)
+    private String firstName;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private BankingEnum.UserRole role;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<BankAccount> accounts = new HashSet<>();
-
-    @Column(nullable = false)
-    private LocalDateTime createdAt;
-
-    @Column(nullable = false)
-    private LocalDateTime updatedAt;
-
-    @Column(name = "last_login")
-    private LocalDateTime lastLogin;
+    @Column(name = "last_name", nullable = false)
+    private String lastName;
 
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
+    @Column(name = "document_type", nullable = false)
+    private BankingEnum.DocumentType documentType;
 
     public User() {
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
-        this.isActive = true;
-        this.role = BankingEnum.UserRole.CLIENT;
     }
 
-    // Getters e Setters
+    public User(Integer id, String email, String firstName, String lastName, boolean isActive, BankingEnum.DocumentType documentType) {
+        this.id = id;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.isActive = isActive;
+        this.documentType = documentType;
+    }
 
     public Integer getId() {
         return id;
@@ -62,22 +45,6 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEmail() {
@@ -88,48 +55,20 @@ public class User {
         this.email = email;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public BankingEnum.UserRole getRole() {
-        return role;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setRole(BankingEnum.UserRole role) {
-        this.role = role;
-    }
-
-    public Set<BankAccount> getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(Set<BankAccount> accounts) {
-        this.accounts = accounts;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public LocalDateTime getLastLogin() {
-        return lastLogin;
-    }
-
-    public void setLastLogin(LocalDateTime lastLogin) {
-        this.lastLogin = lastLogin;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public boolean isActive() {
@@ -140,15 +79,11 @@ public class User {
         isActive = active;
     }
 
-
-// Utility methods
-    public void addAccount(BankAccount account) {
-        accounts.add(account);
-        account.setUser(this);
+    public BankingEnum.DocumentType getDocumentType() {
+        return documentType;
     }
 
-    public void removeAccount(BankAccount account) {
-        accounts.remove(account);
-        account.setUser(null);
+    public void setDocumentType(BankingEnum.DocumentType documentType) {
+        this.documentType = documentType;
     }
 }
