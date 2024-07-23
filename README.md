@@ -3,7 +3,7 @@
 # **Sistema di gestione bancaria online**
 
 ## **Titolo progetto:**
-“My SecureBank Wallet”
+### _“My SecureBank Wallet”_
 
 **Descrizione del progetto:**
 Un'applicazione web per la gestione bancaria online che consente ai clienti di gestire i propri conti
