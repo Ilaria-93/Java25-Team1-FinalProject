@@ -21,9 +21,6 @@ public class User {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "phone")
-    private String phone;
-
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
@@ -33,11 +30,10 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String email, String firstName, String lastName, String phone, boolean isActive, BankingEnum.DocumentType documentType) {
+    public User(Long id, String email, String firstName, String lastName, boolean isActive, BankingEnum.DocumentType documentType) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
-        this.phone = phone;
         this.lastName = lastName;
         this.isActive = isActive;
         this.documentType = documentType;
@@ -73,14 +69,6 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public boolean isActive() {
