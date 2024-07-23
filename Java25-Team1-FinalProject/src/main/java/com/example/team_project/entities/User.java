@@ -3,7 +3,6 @@ package com.example.team_project.entities;
 import com.example.team_project.enumerated.BankingEnum;
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "users")
 public class User {

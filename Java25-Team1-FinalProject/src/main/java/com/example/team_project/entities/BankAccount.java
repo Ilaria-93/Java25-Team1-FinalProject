@@ -1,8 +1,8 @@
 package com.example.team_project.entities;
 
-
 import com.example.team_project.enumerated.BankingEnum;
 import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -101,20 +101,5 @@ public class BankAccount {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-
-    // Utility methods
-    public void deposit(BigDecimal amount) {
-        this.balance = this.balance.add(amount);
-        this.updatedAt = LocalDateTime.now();
-    }
-
-    public void withdraw(BigDecimal amount) {
-        if (this.balance.compareTo(amount) < 0) {
-            throw new IllegalStateException("Insufficient funds");
-        }
-        this.balance = this.balance.subtract(amount);
-        this.updatedAt = LocalDateTime.now();
     }
 }
