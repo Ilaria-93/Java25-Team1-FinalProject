@@ -1,12 +1,11 @@
 package com.example.team_project.entities;
 
 import com.example.team_project.enumerated.BankingEnum;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "customers")
+@PrimaryKeyJoinColumn(name = "user_id")
 public class Customer extends User {
 
     @Column(name = "phone")
