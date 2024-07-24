@@ -1,11 +1,14 @@
 package com.example.team_project.entities;
 
+import com.example.team_project.enumerated.BankAccountEnum;
+import com.example.team_project.enumerated.BankAcountEnum;
 import com.example.team_project.enumerated.BankingEnum;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+// TODO separare classe? Credit Card, Loan, etc.
 @Entity
 @Table(name = "bank_accounts")
 public class BankAccount {
@@ -19,11 +22,11 @@ public class BankAccount {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private BankingEnum.AccountType accountType;
+    private BankAccountEnum.BankAccountType accountType;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private BankingEnum.AccountStatus status;
+    private BankAccountEnum.AccountStatus status;
 
     @Column(nullable = false)
     private BigDecimal balance;
@@ -37,7 +40,7 @@ public class BankAccount {
     public BankAccount() {
     }
 
-    public BankAccount(Integer id, String accountNumber, BankingEnum.AccountType accountType, BankingEnum.AccountStatus status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user) {
+    public BankAccount(Integer id, String accountNumber, BankAccountEnum.BankAccountType accountType, BankAccountEnum.AccountStatus status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user) {
         this.id = id;
         this.accountNumber = accountNumber;
         this.accountType = accountType;
@@ -63,19 +66,19 @@ public class BankAccount {
         this.accountNumber = accountNumber;
     }
 
-    public BankingEnum.AccountType getAccountType() {
+    public BankAccountEnum.BankAccountType getAccountType() {
         return accountType;
     }
 
-    public void setAccountType(BankingEnum.AccountType accountType) {
+    public void setAccountType(BankAccountEnum.BankAccountType accountType) {
         this.accountType = accountType;
     }
 
-    public BankingEnum.AccountStatus getStatus() {
+    public BankAccountEnum.AccountStatus getStatus() {
         return status;
     }
 
-    public void setStatus(BankingEnum.AccountStatus status) {
+    public void setStatus(BankAccountEnum.AccountStatus status) {
         this.status = status;
     }
 

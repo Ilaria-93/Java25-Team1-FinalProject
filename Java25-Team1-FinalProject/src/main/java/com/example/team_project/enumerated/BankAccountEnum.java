@@ -1,14 +1,16 @@
 package com.example.team_project.enumerated;
 
-public class BankingEnum {
+public class BankAccountEnum {
 
-    public enum AccountType {
+    // TODO sistemare gli enumerati nelle corrispettive classi
+    public enum BankAccountType {
         CHECKING,
         SAVINGS,
         CREDIT_CARD,
         LOAN
     }
 
+    // TODO cancellazione logica (RecordStatusEnum)
     public enum AccountStatus {
         ACTIVE,
         INACTIVE,
@@ -34,12 +36,6 @@ public class BankingEnum {
         COMPLETED,
         FAILED,
         CANCELLED
-    }
-
-    public enum NotificationType {
-        EMAIL,
-        SMS,
-        PUSH_NOTIFICATION
     }
 
     public enum DocumentType {
