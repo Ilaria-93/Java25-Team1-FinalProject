@@ -1,6 +1,6 @@
 package com.example.team_project.entities;
 
-import com.example.team_project.enumerated.BankingEnum;
+import com.example.team_project.enumerated.BankAccountEnum;
 import jakarta.persistence.*;
 
 @Entity
@@ -25,12 +25,12 @@ public class User {
     private boolean isActive;
 
     @Column(name = "document_type", nullable = false)
-    private BankingEnum.DocumentType documentType;
+    private BankAccountEnum.DocumentType documentType;
 
     public User() {
     }
 
-    public User(Long id, String email, String firstName, String lastName, boolean isActive, BankingEnum.DocumentType documentType) {
+    public User(Long id, String email, String firstName, String lastName, boolean isActive, BankAccountEnum.DocumentType documentType) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
@@ -79,11 +79,11 @@ public class User {
         isActive = active;
     }
 
-    public BankingEnum.DocumentType getDocumentType() {
+    public BankAccountEnum.DocumentType getDocumentType() {
         return documentType;
     }
 
-    public void setDocumentType(BankingEnum.DocumentType documentType) {
+    public void setDocumentType(BankAccountEnum.DocumentType documentType) {
         this.documentType = documentType;
     }
 }
