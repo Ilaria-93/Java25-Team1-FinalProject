@@ -1,7 +1,6 @@
 package com.example.team_project.entities;
 
 import com.example.team_project.enumerated.BankAccountEnum;
-import com.example.team_project.enumerated.BankingEnum;
 import jakarta.persistence.*;
 
 @Entity
