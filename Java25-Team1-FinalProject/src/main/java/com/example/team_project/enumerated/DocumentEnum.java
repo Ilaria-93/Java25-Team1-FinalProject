@@ -1,6 +1,7 @@
 package com.example.team_project.enumerated;
 
 public enum DocumentEnum {
+
     IDENTITY_CARD("Identity Card"),
     PASSPORT("Passport"),
     DRIVER_LICENSE("Driver License");
