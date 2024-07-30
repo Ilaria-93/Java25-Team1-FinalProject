@@ -1,7 +1,5 @@
 package com.example.team_project.services;
 
-import com.example.team_project.entities.Customer;
-
 import com.example.team_project.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

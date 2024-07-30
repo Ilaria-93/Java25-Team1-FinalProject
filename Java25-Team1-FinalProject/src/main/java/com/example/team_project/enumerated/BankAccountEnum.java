@@ -9,9 +9,17 @@ public class BankAccountEnum {
         CREDIT_CARD,
         LOAN
     }
+    private String descrizione;
 
+    BankAccountEnum(String descrizione){
+        this.descrizione = descrizione;
+    }
 
-
-
-
+    public String getDescrizione() {
+        return descrizione;
+    }
 }
+
+
+
+

@@ -15,4 +15,14 @@ public class UserEnum {
         EMPLOYEE,
         ADMIN
     }
+
+    private String descrizione;
+
+    UserEnum(String descrizione){
+        this.descrizione = descrizione;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
 }

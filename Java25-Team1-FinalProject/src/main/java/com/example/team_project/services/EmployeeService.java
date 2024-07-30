@@ -1,6 +1,5 @@
 package com.example.team_project.services;
 
-import com.example.team_project.entities.Employee;
 import com.example.team_project.repositories.EmployeeRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
