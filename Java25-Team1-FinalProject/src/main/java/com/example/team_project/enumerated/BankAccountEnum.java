@@ -18,12 +18,6 @@ public class BankAccountEnum {
         CLOSED
     }
 
-    public enum TransactionType {
-        DEPOSIT,
-        WITHDRAWAL,
-        TRANSFER,
-        PAYMENT
-    }
 
     public enum UserRole {
         CLIENT,
@@ -31,12 +25,6 @@ public class BankAccountEnum {
         ADMIN
     }
 
-    public enum TransactionStatus {
-        PENDING,
-        COMPLETED,
-        FAILED,
-        CANCELLED
-    }
 
     public enum DocumentType {
         IDENTITY_CARD,
