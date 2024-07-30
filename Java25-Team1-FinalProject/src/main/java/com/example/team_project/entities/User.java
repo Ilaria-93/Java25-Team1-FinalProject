@@ -1,19 +1,18 @@
 package com.example.team_project.entities;
 
-import com.example.team_project.enumerated.BankAccountEnum;
 import com.example.team_project.enumerated.DocumentEnum;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
-@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     @Column(name = "first_name", nullable = false)
@@ -22,12 +21,15 @@ public class User {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "is_active", nullable = false)
-    private boolean isActive;
+    @Column(name = "phone")
+    private String phone;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "document_type", nullable = false)
     private DocumentEnum documentType;
+
+    @Column(name = "document_number", nullable = false)
+    private String documentNumber;
 
     @Column(name = "employee_role", nullable = false)
     private String employeeRole;
@@ -35,62 +37,23 @@ public class User {
     @Column(name = "bank_location", nullable = false)
     private String bankLocation;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "is_active", nullable = false)
+    private boolean isActive;
 
     public User() {
     }
 
-    public User(String bankLocation, DocumentEnum documentType, String email, String employeeRole, String firstName, Long id, boolean isActive, String lastName, String phone) {
-        this.bankLocation = bankLocation;
-        this.documentType = documentType;
-        this.email = email;
-        this.employeeRole = employeeRole;
-        this.firstName = firstName;
+    public User(Long id, String email, String firstName, String lastName, String phone, DocumentEnum documentType, String documentNumber, String employeeRole, String bankLocation, boolean isActive) {
         this.id = id;
-        this.isActive = isActive;
+        this.email = email;
+        this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
-    }
-
-    public String getBankLocation() {
-        return bankLocation;
-    }
-
-    public void setBankLocation(String bankLocation) {
-        this.bankLocation = bankLocation;
-    }
-
-    public DocumentEnum getDocumentType() {
-        return documentType;
-    }
-
-    public void setDocumentType(DocumentEnum documentType) {
         this.documentType = documentType;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getEmployeeRole() {
-        return employeeRole;
-    }
-
-    public void setEmployeeRole(String employeeRole) {
+        this.documentNumber = documentNumber;
         this.employeeRole = employeeRole;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.bankLocation = bankLocation;
+        this.isActive = isActive;
     }
 
     public Long getId() {
@@ -101,12 +64,20 @@ public class User {
         this.id = id;
     }
 
-    public boolean isActive() {
-        return isActive;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setActive(boolean active) {
-        isActive = active;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getLastName() {
@@ -125,18 +96,59 @@ public class User {
         this.phone = phone;
     }
 
+    public DocumentEnum getDocumentType() {
+        return documentType;
+    }
+
+    public void setDocumentType(DocumentEnum documentType) {
+        this.documentType = documentType;
+    }
+
+    public String getDocumentNumber() {
+        return documentNumber;
+    }
+
+    public void setDocumentNumber(String documentNumber) {
+        this.documentNumber = documentNumber;
+    }
+
+    public String getEmployeeRole() {
+        return employeeRole;
+    }
+
+    public void setEmployeeRole(String employeeRole) {
+        this.employeeRole = employeeRole;
+    }
+
+    public String getBankLocation() {
+        return bankLocation;
+    }
+
+    public void setBankLocation(String bankLocation) {
+        this.bankLocation = bankLocation;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "bankLocation='" + bankLocation + '\'' +
-                ", id=" + id +
+                "id=" + id +
                 ", email='" + email + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", isActive=" + isActive +
-                ", documentType=" + documentType +
-                ", employeeRole='" + employeeRole + '\'' +
                 ", phone='" + phone + '\'' +
+                ", documentType=" + documentType +
+                ", documentNumber='" + documentNumber + '\'' +
+                ", employeeRole='" + employeeRole + '\'' +
+                ", bankLocation='" + bankLocation + '\'' +
+                ", isActive=" + isActive +
                 '}';
     }
 }

@@ -14,32 +14,37 @@ public class BankAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "id", nullable = false, unique = true)
+    private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String accountNumber;
+    @Column(name = "account_number", nullable = false, unique = true)
+    private Integer accountNumber;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "account_type", nullable = false)
     private BankAccountEnum accountType;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "status", nullable = false)
     private UserEnum status;
 
-    @Column(nullable = false)
+    @Column(name = "balance", nullable = false)
     private BigDecimal balance;
 
-    @Column(nullable = false)
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    @Column(nullable = false)
+    @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public BankAccount() {
     }
 
-    public BankAccount(Integer id, String accountNumber, BankAccountEnum accountType, UserEnum status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user) {
+    public BankAccount(Long id, Integer accountNumber, BankAccountEnum accountType, UserEnum status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user) {
         this.id = id;
         this.accountNumber = accountNumber;
         this.accountType = accountType;
@@ -47,21 +52,22 @@ public class BankAccount {
         this.balance = balance;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.user = user;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getAccountNumber() {
+    public Integer getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
+    public void setAccountNumber(Integer accountNumber) {
         this.accountNumber = accountNumber;
     }
 
@@ -103,5 +109,13 @@ public class BankAccount {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

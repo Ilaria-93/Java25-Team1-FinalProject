@@ -11,32 +11,34 @@ import java.time.LocalDateTime;
 public class Transaction {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
-    @Column
+    @Column(name = "transaction_type", nullable = false)
     private TransactionEnum transactionType;
 
-    @Column
+    @Column(name = "amount", nullable = false)
     private BigDecimal amount;
 
-    @Column
+    @Column(name = "status", nullable = false)
     private TransactionEnum status;
 
-    @Column
+    @Column(name = "date", nullable = false)
     private LocalDateTime date;
 
-    @Column
-    private String fromAccount;
+    @ManyToOne
+    @JoinColumn(name = "from_account", nullable = false)
+    private BankAccount fromAccount;
 
-    @Column
-    private String toAccount;
+    @ManyToOne
+    @JoinColumn(name = "to_account", nullable = false)
+    private BankAccount toAccount;
 
     public Transaction() {
     }
 
-    public Transaction(Long id, TransactionEnum transactionType, BigDecimal amount, TransactionEnum status, LocalDateTime date, String fromAccount, String toAccount) {
+    public Transaction(Long id, TransactionEnum transactionType, BigDecimal amount, TransactionEnum status, LocalDateTime date, BankAccount fromAccount, BankAccount toAccount) {
         this.id = id;
         this.transactionType = transactionType;
         this.amount = amount;
@@ -86,19 +88,19 @@ public class Transaction {
         this.date = date;
     }
 
-    public String getFromAccount() {
+    public BankAccount getFromAccount() {
         return fromAccount;
     }
 
-    public void setFromAccount(String fromAccount) {
+    public void setFromAccount(BankAccount fromAccount) {
         this.fromAccount = fromAccount;
     }
 
-    public String getToAccount() {
+    public BankAccount getToAccount() {
         return toAccount;
     }
 
-    public void setToAccount(String toAccount) {
+    public void setToAccount(BankAccount toAccount) {
         this.toAccount = toAccount;
     }
 }
