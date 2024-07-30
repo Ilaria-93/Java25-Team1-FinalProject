@@ -11,19 +11,7 @@ public class BankAccountEnum {
     }
 
 
-    public enum TransactionType {
-        DEPOSIT,
-        WITHDRAWAL,
-        TRANSFER,
-        PAYMENT
-    }
 
 
-    public enum TransactionStatus {
-        PENDING,
-        COMPLETED,
-        FAILED,
-        CANCELLED
-    }
 
 }
