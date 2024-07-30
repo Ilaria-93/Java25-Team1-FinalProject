@@ -21,11 +21,11 @@ public class BankAccount {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private BankAccountEnum.BankAccountType accountType;
+    private BankAccountEnum accountType;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private UserEnum.AccountStatus status;
+    private UserEnum status;
 
     @Column(nullable = false)
     private BigDecimal balance;
@@ -39,7 +39,7 @@ public class BankAccount {
     public BankAccount() {
     }
 
-    public BankAccount(Integer id, String accountNumber, BankAccountEnum.BankAccountType accountType, UserEnum.AccountStatus status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user) {
+    public BankAccount(Integer id, String accountNumber, BankAccountEnum accountType, UserEnum status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user) {
         this.id = id;
         this.accountNumber = accountNumber;
         this.accountType = accountType;
@@ -65,19 +65,19 @@ public class BankAccount {
         this.accountNumber = accountNumber;
     }
 
-    public BankAccountEnum.BankAccountType getAccountType() {
+    public BankAccountEnum getAccountType() {
         return accountType;
     }
 
-    public void setAccountType(BankAccountEnum.BankAccountType accountType) {
+    public void setAccountType(BankAccountEnum accountType) {
         this.accountType = accountType;
     }
 
-    public UserEnum.AccountStatus getStatus() {
+    public UserEnum getStatus() {
         return status;
     }
 
-    public void setStatus(UserEnum.AccountStatus status) {
+    public void setStatus(UserEnum status) {
         this.status = status;
     }
 

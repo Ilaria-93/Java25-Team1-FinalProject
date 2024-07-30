@@ -1,6 +1,7 @@
 package com.example.team_project.enumerated;
 
 public enum TransactionEnum {
+
     DEPOSIT("Deposit"),
     WITHDRAWAL("Withdrawal"),
     TRANSFER("Trasfer"),
@@ -14,9 +15,9 @@ public enum TransactionEnum {
     CURRENCY_EURO("€"),
     CURRENCY_DOLLAR("$");
 
-    private String descrizione;
+    private final String descrizione;
 
-    TransactionEnum(String descrizione){
+    TransactionEnum(String descrizione) {
         this.descrizione = descrizione;
     }
 

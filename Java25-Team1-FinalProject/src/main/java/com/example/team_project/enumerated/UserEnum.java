@@ -1,24 +1,19 @@
 package com.example.team_project.enumerated;
 
-public class UserEnum {
+public enum UserEnum {
 
+    ACTIVE("Active"),
+    INACTIVE("Inactive"),
+    BLOCKED("Blocked"),
+    CLOSED("Closed"),
 
-    public enum AccountStatus {
-        ACTIVE,
-        INACTIVE,
-        BLOCKED,
-        CLOSED
-    }
+    USER("User"),
+    EMPLOYEE("Employee"),
+    ADMIN("Admin");
 
-    public enum UserRole {
-        USER,
-        EMPLOYEE,
-        ADMIN
-    }
+    private final String descrizione;
 
-    private String descrizione;
-
-    UserEnum(String descrizione){
+    UserEnum(String descrizione) {
         this.descrizione = descrizione;
     }
 
