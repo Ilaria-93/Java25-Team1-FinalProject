@@ -2,7 +2,7 @@ package com.example.team_project.enumerated;
 
 public class BankAccountEnum {
 
-    // TODO sistemare gli enumerati nelle corrispettive classi
+
     public enum BankAccountType {
         CHECKING,
         SAVINGS,
@@ -10,13 +10,6 @@ public class BankAccountEnum {
         LOAN
     }
 
-    // TODO cancellazione logica (RecordStatusEnum)
-    public enum AccountStatus {
-        ACTIVE,
-        INACTIVE,
-        BLOCKED,
-        CLOSED
-    }
 
     public enum TransactionType {
         DEPOSIT,
@@ -25,11 +18,6 @@ public class BankAccountEnum {
         PAYMENT
     }
 
-    public enum UserRole {
-        CLIENT,
-        EMPLOYEE,
-        ADMIN
-    }
 
     public enum TransactionStatus {
         PENDING,
@@ -38,9 +26,4 @@ public class BankAccountEnum {
         CANCELLED
     }
 
-    public enum DocumentType {
-        IDENTITY_CARD,
-        PASSPORT,
-        DRIVER_LICENSE
-    }
 }

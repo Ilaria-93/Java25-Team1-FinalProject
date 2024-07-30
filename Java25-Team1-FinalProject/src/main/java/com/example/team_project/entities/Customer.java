@@ -1,6 +1,7 @@
 package com.example.team_project.entities;
 
 import com.example.team_project.enumerated.BankAccountEnum;
+import com.example.team_project.enumerated.DocumentEnum;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,7 +16,7 @@ public class Customer extends User {
         super();
     }
 
-    public Customer(Long id, String email, String firstName, String lastName, boolean isActive, BankAccountEnum.DocumentType documentType, String phone) {
+    public Customer(Long id, String email, String firstName, String lastName, boolean isActive, DocumentEnum documentType, String phone) {
         super(id, email, firstName, lastName, isActive, documentType);
         this.phone = phone;
     }

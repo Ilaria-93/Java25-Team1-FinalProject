@@ -1,6 +1,7 @@
 package com.example.team_project.entities;
 
 import com.example.team_project.enumerated.BankAccountEnum;
+import com.example.team_project.enumerated.DocumentEnum;
 import jakarta.persistence.*;
 
 @Entity
@@ -24,27 +25,48 @@ public class User {
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "document_type", nullable = false)
-    private BankAccountEnum.DocumentType documentType;
+    private DocumentEnum documentType;
+
+    @Column(name = "employee_role", nullable = false)
+    private String employeeRole;
+
+    @Column(name = "bank_location", nullable = false)
+    private String bankLocation;
+
+    @Column(name = "phone")
+    private String phone;
 
     public User() {
     }
 
-    public User(Long id, String email, String firstName, String lastName, boolean isActive, BankAccountEnum.DocumentType documentType) {
-        this.id = id;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.isActive = isActive;
+    public User(String bankLocation, DocumentEnum documentType, String email, String employeeRole, String firstName, Long id, boolean isActive, String lastName, String phone) {
+        this.bankLocation = bankLocation;
         this.documentType = documentType;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
+        this.email = email;
+        this.employeeRole = employeeRole;
+        this.firstName = firstName;
         this.id = id;
+        this.isActive = isActive;
+        this.lastName = lastName;
+        this.phone = phone;
+    }
+
+    public String getBankLocation() {
+        return bankLocation;
+    }
+
+    public void setBankLocation(String bankLocation) {
+        this.bankLocation = bankLocation;
+    }
+
+    public DocumentEnum getDocumentType() {
+        return documentType;
+    }
+
+    public void setDocumentType(DocumentEnum documentType) {
+        this.documentType = documentType;
     }
 
     public String getEmail() {
@@ -55,6 +77,14 @@ public class User {
         this.email = email;
     }
 
+    public String getEmployeeRole() {
+        return employeeRole;
+    }
+
+    public void setEmployeeRole(String employeeRole) {
+        this.employeeRole = employeeRole;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -63,12 +93,12 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public Long getId() {
+        return id;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public boolean isActive() {
@@ -79,11 +109,34 @@ public class User {
         isActive = active;
     }
 
-    public BankAccountEnum.DocumentType getDocumentType() {
-        return documentType;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setDocumentType(BankAccountEnum.DocumentType documentType) {
-        this.documentType = documentType;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "bankLocation='" + bankLocation + '\'' +
+                ", id=" + id +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", isActive=" + isActive +
+                ", documentType=" + documentType +
+                ", employeeRole='" + employeeRole + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }

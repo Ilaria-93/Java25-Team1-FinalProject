@@ -1,6 +1,7 @@
 package com.example.team_project.entities;
 
 import com.example.team_project.enumerated.BankAccountEnum;
+import com.example.team_project.enumerated.DocumentEnum;
 import jakarta.persistence.*;
 
 @Entity
@@ -8,17 +9,13 @@ import jakarta.persistence.*;
 @PrimaryKeyJoinColumn(name = "user_id")
 public class Employee extends User {
 
-    @Column(name = "employee_role", nullable = false)
-    private String employeeRole;
 
-    @Column(name = "bank_location", nullable = false)
-    private String bankLocation;
 
     public Employee() {
         super();
     }
 
-    public Employee(Long id, String email, String firstName, String lastName, boolean isActive, BankAccountEnum.DocumentType documentType, String employeeRole, String bankLocation) {
+    public Employee(Long id, String email, String firstName, String lastName, boolean isActive, DocumentEnum documentType, String employeeRole, String bankLocation) {
         super(id, email, firstName, lastName, isActive, documentType);
         this.employeeRole = employeeRole;
         this.bankLocation = bankLocation;
