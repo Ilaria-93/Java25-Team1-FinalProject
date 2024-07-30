@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb38905-9d37-4423-a96e-a86ec30f15f1" name="Changes" comment="Add classes in the services package" />
+    <list default="true" id="bcb38905-9d37-4423-a96e-a86ec30f15f1" name="Changes" comment="aggiornamento">
+      <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/enumerated/UserEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/enumerated/UserEnum.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,10 +23,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="cambiamento" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -38,6 +43,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Lorenzo/Desktop/Web Development/Develhope/Spring Boot/unit-test"
@@ -76,7 +82,23 @@
       <option name="project" value="LOCAL" />
       <updated>1721752741752</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add classes in the services package">
+      <option name="closed" value="true" />
+      <created>1722334554939</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722334554939</updated>
+    </task>
+    <task id="LOCAL-00005" summary="aggiornamento">
+      <option name="closed" value="true" />
+      <created>1722337264747</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722337264747</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +116,7 @@
     <MESSAGE value="Fix classe User" />
     <MESSAGE value="Add classes Customer and Employee" />
     <MESSAGE value="Add classes in the services package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add classes in the services package" />
+    <MESSAGE value="aggiornamento" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiornamento" />
   </component>
 </project>

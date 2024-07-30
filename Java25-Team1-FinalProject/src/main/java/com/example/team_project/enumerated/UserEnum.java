@@ -8,6 +8,7 @@ public class UserEnum {
         INACTIVE,
         BLOCKED,
         CLOSED
+
     }
 
     public enum UserRole {
@@ -15,6 +16,7 @@ public class UserEnum {
         EMPLOYEE,
         ADMIN
     }
+
 
     private String descrizione;
 
