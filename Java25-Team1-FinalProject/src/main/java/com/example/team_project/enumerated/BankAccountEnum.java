@@ -1,17 +1,15 @@
 package com.example.team_project.enumerated;
 
-public class BankAccountEnum {
+public enum BankAccountEnum {
 
+    CHECKING("Checking"),
+    SAVINGS("Savings"),
+    CREDIT_CARD("Credit Card"),
+    LOAN("Loan");
 
-    public enum BankAccountType {
-        CHECKING,
-        SAVINGS,
-        CREDIT_CARD,
-        LOAN
-    }
-    private String descrizione;
+    private final String descrizione;
 
-    BankAccountEnum(String descrizione){
+    BankAccountEnum(String descrizione) {
         this.descrizione = descrizione;
     }
 
