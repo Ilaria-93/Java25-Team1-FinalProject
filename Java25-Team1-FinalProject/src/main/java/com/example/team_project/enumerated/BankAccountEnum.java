@@ -9,8 +9,8 @@ public enum BankAccountEnum {
     LOAN("Loan", 0.05, 0);
 
     private final String descrizione;
-    private Double interestRate;
-    private Integer creditLimit;
+    private final Double interestRate;
+    private final Integer creditLimit;
 
     BankAccountEnum(String descrizione, Double interestRate, Integer creditLimit) {
         this.descrizione = descrizione;

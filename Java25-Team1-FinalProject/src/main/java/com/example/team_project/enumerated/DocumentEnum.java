@@ -6,7 +6,7 @@ public enum DocumentEnum {
     PASSPORT("Passport"),
     DRIVER_LICENSE("Driver License");
 
-    private String descrizione;
+    private final String descrizione;
 
     DocumentEnum(String descrizione) {
         this.descrizione = descrizione;
