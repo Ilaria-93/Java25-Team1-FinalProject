@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-// TODO separare classe? Credit Card, Loan, etc.
 @Entity
 @Table(name = "bank_accounts")
 public class BankAccount {

@@ -11,7 +11,7 @@ public enum TransactionEnum {
     DECLINED("Declined"),
     PENDING("Pending"),
 
-    //TODO Currency vale sia per l'Entity Transaction e BankAccount, chiedere se fare un enum separato
+    //TODO Currency vale sia per l'Entity Transaction e BankAccount, chiedere se fare un enum separato, CurrencyEnum
     CURRENCY_EURO("€"),
     CURRENCY_DOLLAR("$");
 

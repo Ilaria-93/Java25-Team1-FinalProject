@@ -135,20 +135,4 @@ public class User {
     public void setActive(boolean active) {
         isActive = active;
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phone='" + phone + '\'' +
-                ", documentType=" + documentType +
-                ", documentNumber='" + documentNumber + '\'' +
-                ", employeeRole='" + employeeRole + '\'' +
-                ", bankLocation='" + bankLocation + '\'' +
-                ", isActive=" + isActive +
-                '}';
-    }
 }
