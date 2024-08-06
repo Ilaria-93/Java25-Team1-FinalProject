@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b5303d78-e352-4939-bf55-0e7488610386" name="Changes" comment="Sistemazione enum e fix delle entities" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2jy7bY2sBJKnPsD3ujXp2qHTygm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Application.TeamFinalProjectApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Lorenzo/Desktop/Web Development/Develhope/Progetto finale1/Java25-Team1-FinalProject"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lorenzo\Desktop\Web Development\Develhope\Progetto finale1\Java25-Team1-FinalProject" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5303d78-e352-4939-bf55-0e7488610386" name="Changes" comment="" />
+      <created>1722347534889</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722347534889</updated>
+    </task>
+    <task id="LOCAL-00001" summary="enum fix">
+      <option name="closed" value="true" />
+      <created>1722348117251</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722348117251</updated>
+    </task>
+    <task id="LOCAL-00002" summary="enum fix">
+      <option name="closed" value="true" />
+      <created>1722348230039</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722348230039</updated>
+    </task>
+    <task id="LOCAL-00003" summary="entities fix">
+      <option name="closed" value="true" />
+      <created>1722353861866</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722353861866</updated>
+    </task>
+    <task id="LOCAL-00004" summary="BankAccountEnum fix">
+      <option name="closed" value="true" />
+      <created>1722354352074</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722354352074</updated>
+    </task>
+    <task id="LOCAL-00005" summary="BankAccountEnum fix">
+      <option name="closed" value="true" />
+      <created>1722354599727</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722354599727</updated>
+    </task>
+    <task id="LOCAL-00006" summary="BankAccountEnum fix">
+      <option name="closed" value="true" />
+      <created>1722354688148</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1722354688148</updated>
+    </task>
+    <task id="LOCAL-00007" summary="BankAccountEnum fix">
+      <option name="closed" value="true" />
+      <created>1722355416240</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722355416240</updated>
+    </task>
+    <task id="LOCAL-00008" summary="BankAccountEnum fix">
+      <option name="closed" value="true" />
+      <created>1722355605286</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1722355605286</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Meeting">
+      <option name="closed" value="true" />
+      <created>1722413328762</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1722413328762</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Sistemazione enum e fix delle entities">
+      <option name="closed" value="true" />
+      <created>1722952717642</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1722952717642</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="enum fix" />
+    <MESSAGE value="entities fix" />
+    <MESSAGE value="BankAccountEnum fix" />
+    <MESSAGE value="Meeting" />
+    <MESSAGE value="Sistemazione enum e fix delle entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione enum e fix delle entities" />
+  </component>
+</project>
