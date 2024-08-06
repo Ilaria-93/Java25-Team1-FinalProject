@@ -1,6 +1,7 @@
 package com.example.team_project.entities;
 
-import com.example.team_project.enumerated.TransactionEnum;
+import com.example.team_project.enumerated.TransactionStatusEnum;
+import com.example.team_project.enumerated.TransactionTypeEnum;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -15,14 +16,16 @@ public class Transaction {
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
-    @Column(name = "transaction_type", nullable = false)
-    private TransactionEnum transactionType;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type", nullable = false)
+    private TransactionTypeEnum type;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private TransactionStatusEnum status;
 
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
-
-    @Column(name = "status", nullable = false)
-    private TransactionEnum status;
 
     @Column(name = "date", nullable = false)
     private LocalDateTime date;
@@ -31,21 +34,16 @@ public class Transaction {
     @JoinColumn(name = "from_account", nullable = false)
     private BankAccount fromAccount;
 
-    @ManyToOne
-    @JoinColumn(name = "to_account", nullable = false)
-    private BankAccount toAccount;
-
     public Transaction() {
     }
 
-    public Transaction(Long id, TransactionEnum transactionType, BigDecimal amount, TransactionEnum status, LocalDateTime date, BankAccount fromAccount, BankAccount toAccount) {
+    public Transaction(Long id, TransactionTypeEnum type, BigDecimal amount, TransactionStatusEnum status, LocalDateTime date, BankAccount fromAccount) {
         this.id = id;
-        this.transactionType = transactionType;
-        this.amount = amount;
+        this.type = type;
         this.status = status;
+        this.amount = amount;
         this.date = date;
         this.fromAccount = fromAccount;
-        this.toAccount = toAccount;
     }
 
     public Long getId() {
@@ -56,12 +54,20 @@ public class Transaction {
         this.id = id;
     }
 
-    public TransactionEnum getTransactionType() {
-        return transactionType;
+    public TransactionTypeEnum getType() {
+        return type;
     }
 
-    public void setTransactionType(TransactionEnum transactionType) {
-        this.transactionType = transactionType;
+    public void setType(TransactionTypeEnum type) {
+        this.type = type;
+    }
+
+    public TransactionStatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(TransactionStatusEnum status) {
+        this.status = status;
     }
 
     public BigDecimal getAmount() {
@@ -70,14 +76,6 @@ public class Transaction {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
-    }
-
-    public TransactionEnum getStatus() {
-        return status;
-    }
-
-    public void setStatus(TransactionEnum status) {
-        this.status = status;
     }
 
     public LocalDateTime getDate() {
@@ -94,14 +92,6 @@ public class Transaction {
 
     public void setFromAccount(BankAccount fromAccount) {
         this.fromAccount = fromAccount;
-    }
-
-    public BankAccount getToAccount() {
-        return toAccount;
-    }
-
-    public void setToAccount(BankAccount toAccount) {
-        this.toAccount = toAccount;
     }
 }
 

@@ -1,7 +1,7 @@
 package com.example.team_project.entities;
 
-import com.example.team_project.enumerated.BankAccountEnum;
-import com.example.team_project.enumerated.UserEnum;
+import com.example.team_project.enumerated.BankAccountTypeEnum;
+import com.example.team_project.enumerated.UserStatusEnum;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -21,11 +21,11 @@ public class BankAccount {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "account_type", nullable = false)
-    private BankAccountEnum accountType;
+    private BankAccountTypeEnum accountType;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
-    private UserEnum status;
+    private UserStatusEnum status;
 
     @Column(name = "balance", nullable = false)
     private BigDecimal balance;
@@ -40,10 +40,14 @@ public class BankAccount {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "bank_id", nullable = false)
+    private Bank bank;
+
     public BankAccount() {
     }
 
-    public BankAccount(Long id, Integer accountNumber, BankAccountEnum accountType, UserEnum status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user) {
+    public BankAccount(Long id, Integer accountNumber, BankAccountTypeEnum accountType, UserStatusEnum status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user, Bank bank) {
         this.id = id;
         this.accountNumber = accountNumber;
         this.accountType = accountType;
@@ -52,6 +56,7 @@ public class BankAccount {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.user = user;
+        this.bank = bank;
     }
 
     public Long getId() {
@@ -70,19 +75,19 @@ public class BankAccount {
         this.accountNumber = accountNumber;
     }
 
-    public BankAccountEnum getAccountType() {
+    public BankAccountTypeEnum getAccountType() {
         return accountType;
     }
 
-    public void setAccountType(BankAccountEnum accountType) {
+    public void setAccountType(BankAccountTypeEnum accountType) {
         this.accountType = accountType;
     }
 
-    public UserEnum getStatus() {
+    public UserStatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(UserEnum status) {
+    public void setStatus(UserStatusEnum status) {
         this.status = status;
     }
 
@@ -116,5 +121,13 @@ public class BankAccount {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Bank getBank() {
+        return bank;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
     }
 }

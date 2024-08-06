@@ -1,6 +1,7 @@
 package com.example.team_project.entities;
 
-import com.example.team_project.enumerated.DocumentEnum;
+import com.example.team_project.enumerated.DocumentTypeEnum;
+import com.example.team_project.enumerated.UserRoleEnum;
 import jakarta.persistence.*;
 
 @Entity
@@ -26,16 +27,14 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "document_type", nullable = false)
-    private DocumentEnum documentType;
+    private DocumentTypeEnum documentType;
 
     @Column(name = "document_number", nullable = false)
     private String documentNumber;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "employee_role", nullable = false)
-    private String employeeRole;
-
-    @Column(name = "bank_location", nullable = false)
-    private String bankLocation;
+    private UserRoleEnum employeeRole;
 
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
@@ -43,7 +42,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String email, String firstName, String lastName, String phone, DocumentEnum documentType, String documentNumber, String employeeRole, String bankLocation, boolean isActive) {
+    public User(Long id, String email, String firstName, String lastName, String phone, DocumentTypeEnum documentType, String documentNumber, UserRoleEnum employeeRole, boolean isActive) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
@@ -52,7 +51,6 @@ public class User {
         this.documentType = documentType;
         this.documentNumber = documentNumber;
         this.employeeRole = employeeRole;
-        this.bankLocation = bankLocation;
         this.isActive = isActive;
     }
 
@@ -64,20 +62,20 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -96,11 +94,11 @@ public class User {
         this.phone = phone;
     }
 
-    public DocumentEnum getDocumentType() {
+    public DocumentTypeEnum getDocumentType() {
         return documentType;
     }
 
-    public void setDocumentType(DocumentEnum documentType) {
+    public void setDocumentType(DocumentTypeEnum documentType) {
         this.documentType = documentType;
     }
 
@@ -112,20 +110,12 @@ public class User {
         this.documentNumber = documentNumber;
     }
 
-    public String getEmployeeRole() {
+    public UserRoleEnum getEmployeeRole() {
         return employeeRole;
     }
 
-    public void setEmployeeRole(String employeeRole) {
+    public void setEmployeeRole(UserRoleEnum employeeRole) {
         this.employeeRole = employeeRole;
-    }
-
-    public String getBankLocation() {
-        return bankLocation;
-    }
-
-    public void setBankLocation(String bankLocation) {
-        this.bankLocation = bankLocation;
     }
 
     public boolean isActive() {
