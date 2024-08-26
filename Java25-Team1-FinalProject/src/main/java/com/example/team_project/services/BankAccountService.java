@@ -27,7 +27,7 @@ public class BankAccountService {
     }
 
     // Retrieves a single bank account by its ID
-    public Optional<BankAccount> getBankAccountById(Long id) {
+    public Optional<BankAccount> findBankAccountById(Long id) {
         if (bankAccountRepository.existsById(Math.toIntExact(id))) {
             return bankAccountRepository.findById(Math.toIntExact(id));
         } else {
@@ -36,12 +36,9 @@ public class BankAccountService {
     }
 
     // Deletes a specific bank account by its ID
-    public boolean deleteBankAccountById(Long id) {
+    public void deleteBankAccountById(Long id) {
         if (bankAccountRepository.existsById(Math.toIntExact(id))) {
             bankAccountRepository.deleteById(Math.toIntExact(id));
-            return true;
-        } else {
-            return false;
         }
     }
 
