@@ -94,4 +94,3 @@ public class Transaction {
         this.fromAccount = fromAccount;
     }
 }
-
