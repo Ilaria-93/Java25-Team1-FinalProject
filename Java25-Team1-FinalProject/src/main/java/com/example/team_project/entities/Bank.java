@@ -31,8 +31,8 @@ public class Bank {
     @Column(name = "opening_hours")
     private String openingHours;
 
-
-    public Bank (){}
+    public Bank() {
+    }
 
     public Bank(String email, Long id, String location, String name, String openingHours, String phone, String swiftCode) {
         this.email = email;
