@@ -32,7 +32,7 @@ public class BankService {
     // Updates the information of a bank
     public Bank updateBank(Long id, Bank updatedBank) {
         if (bankRepository.existsById(Math.toIntExact(id))) {
-            updatedBank.setId(id); // Ensure the ID is set
+            updatedBank.setId(id);
             return bankRepository.save(updatedBank);
         } else {
             throw new IllegalStateException("Bank not found");
