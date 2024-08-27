@@ -2,7 +2,6 @@ package com.example.team_project.services;
 
 import com.example.team_project.entities.Bank;
 import com.example.team_project.repositories.BankRepository;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
