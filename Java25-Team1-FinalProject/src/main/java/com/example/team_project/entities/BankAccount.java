@@ -14,7 +14,7 @@ public class BankAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
-    private Long id;
+    private Integer id;
 
     @Column(name = "account_number", nullable = false, unique = true)
     private Integer accountNumber;
@@ -47,7 +47,7 @@ public class BankAccount {
     public BankAccount() {
     }
 
-    public BankAccount(Long id, Integer accountNumber, BankAccountTypeEnum accountType, UserStatusEnum status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user, Bank bank) {
+    public BankAccount(Integer id, Integer accountNumber, BankAccountTypeEnum accountType, UserStatusEnum status, BigDecimal balance, LocalDateTime createdAt, LocalDateTime updatedAt, User user, Bank bank) {
         this.id = id;
         this.accountNumber = accountNumber;
         this.accountType = accountType;
@@ -59,11 +59,11 @@ public class BankAccount {
         this.bank = bank;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -33,7 +33,7 @@ public class BankAccountController {
 
     // Retrieve a single bank account by its ID
     @GetMapping("/{id}")
-    public ResponseEntity<BankAccount> getBankAccountById(@PathVariable Long id) {
+    public ResponseEntity<BankAccount> getBankAccountById(@PathVariable Integer id) {
         Optional<BankAccount> bankAccount = bankAccountService.findBankAccountById(id);
         if (bankAccount.isPresent()) {
             return ResponseEntity.ok(bankAccount.get());
@@ -44,7 +44,7 @@ public class BankAccountController {
 
     // Delete a specific bank account by its ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBankAccountById(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteBankAccountById(@PathVariable Integer id) {
         try {
             bankAccountService.deleteBankAccountById(id);
             return ResponseEntity.noContent().build();
@@ -55,14 +55,14 @@ public class BankAccountController {
 
     // Deposit a specified amount into a bank account
     @PostMapping("/{accountId}/deposit")
-    public ResponseEntity<BankAccount> deposit(@PathVariable Long accountId, @RequestBody BigDecimal amount) {
+    public ResponseEntity<BankAccount> deposit(@PathVariable Integer accountId, @RequestBody BigDecimal amount) {
         BankAccount updatedAccount = bankAccountService.deposit(accountId, amount);
         return ResponseEntity.ok(updatedAccount);
     }
 
     // Withdraw a specified amount from a bank account
     @PostMapping("/{accountId}/withdraw")
-    public ResponseEntity<BankAccount> withdraw(@PathVariable Long accountId, @RequestBody BigDecimal amount) {
+    public ResponseEntity<BankAccount> withdraw(@PathVariable Integer accountId, @RequestBody BigDecimal amount) {
         BankAccount updatedAccount = bankAccountService.withdraw(accountId, amount);
         return ResponseEntity.ok(updatedAccount);
     }
@@ -70,8 +70,8 @@ public class BankAccountController {
     // Transfer a specified amount between two bank accounts
     @PostMapping("/transfer")
     public ResponseEntity<BankAccount> transfer(
-            @RequestParam Long fromAccountId,
-            @RequestParam Long toAccountId,
+            @RequestParam Integer fromAccountId,
+            @RequestParam Integer toAccountId,
             @RequestBody BigDecimal amount) {
         BankAccount updatedToAccount = bankAccountService.transfer(fromAccountId, toAccountId, amount);
         return ResponseEntity.ok(updatedToAccount);
@@ -79,14 +79,14 @@ public class BankAccountController {
 
     // Apply interest to a bank account based on its type
     @PostMapping("/{accountId}/apply-interest")
-    public ResponseEntity<BankAccount> applyInterest(@PathVariable Long accountId) {
+    public ResponseEntity<BankAccount> applyInterest(@PathVariable Integer accountId) {
         BankAccount updatedAccount = bankAccountService.applyInterest(accountId);
         return ResponseEntity.ok(updatedAccount);
     }
 
     // Check the balance of a bank account
     @GetMapping("/{accountId}/balance")
-    public ResponseEntity<BigDecimal> checkBalance(@PathVariable Long accountId) {
+    public ResponseEntity<BigDecimal> checkBalance(@PathVariable Integer accountId) {
         BigDecimal balance = bankAccountService.checkBalance(accountId);
         return ResponseEntity.ok(balance);
     }

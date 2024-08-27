@@ -11,7 +11,7 @@ public class Bank {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
-    private Long id;
+    private Integer id;
 
     @Column(name = "swift_code", nullable = false, unique = true)
     private String swiftCode;
@@ -34,7 +34,7 @@ public class Bank {
     public Bank() {
     }
 
-    public Bank(String email, Long id, String location, String name, String openingHours, String phone, String swiftCode) {
+    public Bank(String email, Integer id, String location, String name, String openingHours, String phone, String swiftCode) {
         this.email = email;
         this.id = id;
         this.location = location;
@@ -52,11 +52,11 @@ public class Bank {
         this.email = email;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

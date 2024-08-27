@@ -3,6 +3,7 @@ package com.example.team_project.entities;
 import com.example.team_project.enumerated.DocumentTypeEnum;
 import com.example.team_project.enumerated.UserRoleEnum;
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 
 @Entity
 @Table(name = "users")
@@ -11,7 +12,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
-    private Long id;
+    private Integer id;
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
@@ -42,7 +43,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String email, String firstName, String lastName, String phone, DocumentTypeEnum documentType, String documentNumber, UserRoleEnum employeeRole, boolean isActive) {
+    public User(Integer id, String email, String firstName, String lastName, String phone, DocumentTypeEnum documentType, String documentNumber, UserRoleEnum employeeRole, boolean isActive) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
@@ -54,11 +55,11 @@ public class User {
         this.isActive = isActive;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
