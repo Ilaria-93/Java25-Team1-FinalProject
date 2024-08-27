@@ -16,8 +16,8 @@ public class BankService {
     private BankRepository bankRepository;
 
     // Creates new banks
-    public List<Bank> createBanks(List<Bank> banks) {
-        return bankRepository.saveAll(banks);
+    public Bank createBanks(Bank bank) {
+        return bankRepository.save(bank);
     }
 
     // Retrieves the list of all banks

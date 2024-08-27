@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/banks")
+@RequestMapping("/bank")
 public class BankController {
 
     @Autowired
@@ -18,8 +18,8 @@ public class BankController {
 
     // Creates new banks
     @PostMapping
-    public List<Bank> createBanks(@RequestBody List<Bank> banks) {
-        return bankService.createBanks(banks);
+    public Bank createBanks(@RequestBody Bank bank) {
+        return bankService.createBanks(bank);
     }
 
     // Retrieves the list of all banks
