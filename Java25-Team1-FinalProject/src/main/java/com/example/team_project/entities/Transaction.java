@@ -14,7 +14,7 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
-    private Long id;
+    private Integer id;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false)
@@ -37,7 +37,7 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(Long id, TransactionTypeEnum type, BigDecimal amount, TransactionStatusEnum status, LocalDateTime date, BankAccount fromAccount) {
+    public Transaction(Integer id, TransactionTypeEnum type, BigDecimal amount, TransactionStatusEnum status, LocalDateTime date, BankAccount fromAccount) {
         this.id = id;
         this.type = type;
         this.status = status;
@@ -46,11 +46,11 @@ public class Transaction {
         this.fromAccount = fromAccount;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

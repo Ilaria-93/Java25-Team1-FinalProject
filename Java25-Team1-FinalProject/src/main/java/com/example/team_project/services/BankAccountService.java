@@ -27,24 +27,24 @@ public class BankAccountService {
     }
 
     // Retrieves a single bank account by its ID
-    public Optional<BankAccount> findBankAccountById(Long id) {
+    public Optional<BankAccount> findBankAccountById(Integer id) {
         if (bankAccountRepository.existsById(Math.toIntExact(id))) {
-            return bankAccountRepository.findById(Math.toIntExact(id));
+            return bankAccountRepository.findById(id);
         } else {
             return Optional.empty();
         }
     }
 
     // Deletes a specific bank account by its ID
-    public void deleteBankAccountById(Long id) {
+    public void deleteBankAccountById(Integer id) {
         if (bankAccountRepository.existsById(Math.toIntExact(id))) {
             bankAccountRepository.deleteById(Math.toIntExact(id));
         }
     }
 
     // Deposits a specified amount into a bank account
-    public BankAccount deposit(Long accountId, BigDecimal amount) {
-        Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(Math.toIntExact(accountId));
+    public BankAccount deposit(Integer accountId, BigDecimal amount) {
+        Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(accountId);
         if (optionalBankAccount.isEmpty()) {
             throw new IllegalStateException("Account not found");
         }
@@ -55,8 +55,8 @@ public class BankAccountService {
     }
 
     // Withdraws a specified amount from a bank account
-    public BankAccount withdraw(Long accountId, BigDecimal amount) {
-        Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(Math.toIntExact(accountId));
+    public BankAccount withdraw(Integer accountId, BigDecimal amount) {
+        Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(accountId);
         if (optionalBankAccount.isEmpty()) {
             throw new IllegalStateException("Account not found");
         }
@@ -70,12 +70,12 @@ public class BankAccountService {
     }
 
     // Method to transfer a certain amount between two bank accounts
-    public BankAccount transfer(Long fromAccountId, Long toAccountId, BigDecimal amount) {
-        Optional<BankAccount> optionalFromAccount = bankAccountRepository.findById(Math.toIntExact(fromAccountId));
+    public BankAccount transfer(Integer fromAccountId, Integer toAccountId, BigDecimal amount) {
+        Optional<BankAccount> optionalFromAccount = bankAccountRepository.findById(fromAccountId);
         if (optionalFromAccount.isEmpty()) {
             throw new IllegalStateException("Source account not found");
         }
-        Optional<BankAccount> optionalToAccount = bankAccountRepository.findById(Math.toIntExact(toAccountId));
+        Optional<BankAccount> optionalToAccount = bankAccountRepository.findById(toAccountId);
         if (optionalToAccount.isEmpty()) {
             throw new IllegalStateException("Destination account not found");
         }
@@ -95,8 +95,8 @@ public class BankAccountService {
     }
 
     // Method to apply interest to a bank account based on its type
-    public BankAccount applyInterest(Long accountId) {
-        Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(Math.toIntExact(accountId));
+    public BankAccount applyInterest(Integer accountId) {
+        Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(accountId);
         if (optionalBankAccount.isEmpty()) {
             throw new IllegalStateException("Account not found");
         }
@@ -111,8 +111,8 @@ public class BankAccountService {
     }
 
     // Method to check the balance of a bank account
-    public BigDecimal checkBalance(Long accountId) {
-        Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(Math.toIntExact(accountId));
+    public BigDecimal checkBalance(Integer accountId) {
+        Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(accountId);
         if (optionalBankAccount.isEmpty()) {
             throw new IllegalStateException("Account not found");
         }

@@ -30,7 +30,7 @@ public class BankController {
 
     // Retrieves a single bank by its ID
     @GetMapping("/{id}")
-    public ResponseEntity<Bank> getBankById(@PathVariable Long id) {
+    public ResponseEntity<Bank> getBankById(@PathVariable Integer id) {
         Optional<Bank> bank = bankService.getBankById(id);
         if (bank.isPresent()) {
             return ResponseEntity.ok(bank.get());
@@ -41,7 +41,7 @@ public class BankController {
 
     // Updates the information of a bank
     @PutMapping("/{id}")
-    public ResponseEntity<Bank> updateBank(@PathVariable Long id, @RequestBody Bank updatedBank) {
+    public ResponseEntity<Bank> updateBank(@PathVariable Integer id, @RequestBody Bank updatedBank) {
         try {
             Bank bank = bankService.updateBank(id, updatedBank);
             return ResponseEntity.ok(bank);
@@ -52,7 +52,7 @@ public class BankController {
 
     // Deletes a specific bank by its ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBankById(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteBankById(@PathVariable Integer id) {
         try {
             bankService.deleteBankById(id);
             return ResponseEntity.noContent().build();
