@@ -2,6 +2,7 @@ package com.example.team_project.services;
 
 import com.example.team_project.entities.Bank;
 import com.example.team_project.repositories.BankRepository;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,14 +26,14 @@ public class BankService {
     }
 
     // Retrieves a single bank by its ID
-    public Optional<Bank> getBankById(Long id) {
-        return bankRepository.findById(Math.toIntExact(id));
+    public Optional<Bank> getBankById(Integer id) {
+        return bankRepository.findById(id);
     }
 
     // Updates the information of a bank
-    public Bank updateBank(Long id, Bank updatedBank) {
-        if (bankRepository.existsById(Math.toIntExact(id))) {
-            updatedBank.setId(id); // Ensure the ID is set
+    public Bank updateBank(Integer id, Bank updatedBank) {
+        if (bankRepository.existsById(id)) {
+            updatedBank.setId(id);
             return bankRepository.save(updatedBank);
         } else {
             throw new IllegalStateException("Bank not found");
@@ -40,9 +41,9 @@ public class BankService {
     }
 
     // Deletes a specific bank by its ID
-    public void deleteBankById(Long id) {
-        if (bankRepository.existsById(Math.toIntExact(id))) {
-            bankRepository.deleteById(Math.toIntExact(id));
+    public void deleteBankById(Integer id) {
+        if (bankRepository.existsById(id)) {
+            bankRepository.deleteById(id);
         } else {
             throw new IllegalStateException("Bank not found");
         }
