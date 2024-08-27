@@ -2,7 +2,6 @@ package com.example.team_project.services;
 
 import com.example.team_project.entities.Bank;
 import com.example.team_project.repositories.BankRepository;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +15,8 @@ public class BankService {
     private BankRepository bankRepository;
 
     // Creates new banks
-    public List<Bank> createBanks(List<Bank> banks) {
-        return bankRepository.saveAll(banks);
+    public Bank createBanks(Bank bank) {
+        return bankRepository.save(bank);
     }
 
     // Retrieves the list of all banks
