@@ -25,13 +25,13 @@ public class BankService {
     }
 
     // Retrieves a single bank by its ID
-    public Optional<Bank> getBankById(Integer id) {
-        return bankRepository.findById(id);
+    public Optional<Bank> getBankById(Long id) {
+        return bankRepository.findById(Math.toIntExact(id));
     }
 
     // Updates the information of a bank
-    public Bank updateBank(Integer id, Bank updatedBank) {
-        if (bankRepository.existsById(id)) {
+    public Bank updateBank(Long id, Bank updatedBank) {
+        if (bankRepository.existsById(Math.toIntExact(id))) {
             updatedBank.setId(id); // Ensure the ID is set
             return bankRepository.save(updatedBank);
         } else {
@@ -40,9 +40,9 @@ public class BankService {
     }
 
     // Deletes a specific bank by its ID
-    public void deleteBankById(Integer id) {
-        if (bankRepository.existsById(id)) {
-            bankRepository.deleteById(id);
+    public void deleteBankById(Long id) {
+        if (bankRepository.existsById(Math.toIntExact(id))) {
+            bankRepository.deleteById(Math.toIntExact(id));
         } else {
             throw new IllegalStateException("Bank not found");
         }
