@@ -15,7 +15,7 @@ public class BankService {
     private BankRepository bankRepository;
 
     // Creates new banks
-    public Bank createBanks(Bank bank) {
+    public Bank createBank(Bank bank) {
         return bankRepository.save(bank);
     }
 

@@ -3,6 +3,7 @@ package com.example.team_project.controllers;
 import com.example.team_project.entities.Bank;
 import com.example.team_project.services.BankService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,15 +18,14 @@ public class BankController {
     private BankService bankService;
 
     // Creates new banks
-    // TODO aggiungi mappatura
-    @PostMapping
-    public Bank createBanks(@RequestBody Bank bank) {
-        return bankService.createBanks(bank);
+    @PostMapping("/create")
+    public ResponseEntity<Bank> createBank(@RequestBody Bank bank) {
+        Bank createdBank = bankService.createBank(bank);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdBank);
     }
 
     // Retrieves the list of all banks
-    // TODO aggiungi mappatura
-    @GetMapping
+    @GetMapping("/list")
     public List<Bank> listBanks() {
         return bankService.listBanks();
     }

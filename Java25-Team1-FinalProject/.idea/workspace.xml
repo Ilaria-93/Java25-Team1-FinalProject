@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5303d78-e352-4939-bf55-0e7488610386" name="Changes" comment="Sistemazione enum e fix delle entities">
+    <list default="true" id="b5303d78-e352-4939-bf55-0e7488610386" name="Changes" comment="Sistemazione codice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/team_project/controllers/BankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/team_project/controllers/BankController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/team_project/services/BankService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/team_project/services/BankService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,17 +39,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Application.TeamFinalProjectApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lorenzo/Desktop/Web Development/Develhope/Progetto finale1/Java25-Team1-FinalProject&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Application.TeamFinalProjectApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Lorenzo/Desktop/Web Development/Develhope/Spring Boot/logging"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Lorenzo\Desktop\Web Development\Develhope\Progetto finale1\Java25-Team1-FinalProject" />
@@ -165,6 +165,7 @@
     <MESSAGE value="Meeting" />
     <MESSAGE value="Sistemazione enum e fix delle entities" />
     <MESSAGE value="Fix BankService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix BankService" />
+    <MESSAGE value="Sistemazione codice" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione codice" />
   </component>
 </project>
