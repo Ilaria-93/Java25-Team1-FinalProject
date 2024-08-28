@@ -17,19 +17,21 @@ public class BankController {
     private BankService bankService;
 
     // Creates new banks
+    // TODO aggiungi mappatura
     @PostMapping
     public Bank createBanks(@RequestBody Bank bank) {
         return bankService.createBanks(bank);
     }
 
     // Retrieves the list of all banks
+    // TODO aggiungi mappatura
     @GetMapping
     public List<Bank> listBanks() {
         return bankService.listBanks();
     }
 
     // Retrieves a single bank by its ID
-    @GetMapping("/{id}")
+    @GetMapping("/select/{id}")
     public ResponseEntity<Bank> getBankById(@PathVariable Integer id) {
         Optional<Bank> bank = bankService.getBankById(id);
         if (bank.isPresent()) {
@@ -40,18 +42,19 @@ public class BankController {
     }
 
     // Updates the information of a bank
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Bank> updateBank(@PathVariable Integer id, @RequestBody Bank updatedBank) {
-        try {
-            Bank bank = bankService.updateBank(id, updatedBank);
-            return ResponseEntity.ok(bank);
-        } catch (IllegalStateException e) {
+        Optional<Bank> bank = bankService.updateBank(id, updatedBank);
+        if (bank.isPresent()){
+            return ResponseEntity.ok(bank.get());
+        } else {
             return ResponseEntity.notFound().build();
         }
     }
 
     // Deletes a specific bank by its ID
-    @DeleteMapping("/{id}")
+    // TODO sistema metodo
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteBankById(@PathVariable Integer id) {
         try {
             bankService.deleteBankById(id);

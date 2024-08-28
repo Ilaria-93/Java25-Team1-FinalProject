@@ -30,12 +30,16 @@ public class BankService {
     }
 
     // Updates the information of a bank
-    public Bank updateBank(Integer id, Bank updatedBank) {
-        if (bankRepository.existsById(id)) {
-            updatedBank.setId(id);
-            return bankRepository.save(updatedBank);
+    // TODO usa optional (bad request) - modificazione delle variabili no id
+    public Optional<Bank> updateBank(Integer id, Bank updatedBank) {
+        Optional<Bank> currentBankOpt = bankRepository.findById(id);
+        if (currentBankOpt.isPresent()) {
+            currentBankOpt.get().setEmail(updatedBank.getEmail());
+            // TODO aggiungi gli altri campi
+            bankRepository.save(currentBankOpt.get());
+            return currentBankOpt;
         } else {
-            throw new IllegalStateException("Bank not found");
+            return Optional.empty();
         }
     }
 
