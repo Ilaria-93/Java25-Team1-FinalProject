@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b5303d78-e352-4939-bf55-0e7488610386" name="Changes" comment="Sistemazione codice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/team_project/controllers/BankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/team_project/controllers/BankController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +44,7 @@
     "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Lorenzo/Desktop/Web Development/Develhope/Spring Boot/logging"
+    "last_opened_file_path": "C:/Users/Lorenzo/Desktop/Web Development/Develhope/Progetto finale1/Java25-Team1-FinalProject"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -144,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722952717642</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Sistemazione codice">
+      <option name="closed" value="true" />
+      <created>1724839660697</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1724839660697</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
