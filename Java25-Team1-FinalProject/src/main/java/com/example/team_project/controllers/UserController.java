@@ -18,7 +18,7 @@ public class UserController {
     private UserService userService;
 
     // Create a new user
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User createdUser = userService.createNewUser(user);
         return ResponseEntity.ok(createdUser);
@@ -31,7 +31,7 @@ public class UserController {
     }
 
     // Get a user by ID
-    @GetMapping("/{id}")
+    @GetMapping("/search/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Integer id) {
         Optional<User> user = userService.getUserById(id);
         if (user.isPresent()) {
@@ -43,7 +43,7 @@ public class UserController {
 
 
     // Update a user by ID
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User userDetails) {
         try {
             User updatedUser = userService.updateUser(id, userDetails);
@@ -54,7 +54,7 @@ public class UserController {
     }
 
     // Delete a user by ID
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
         try {
             userService.deleteUser(id);

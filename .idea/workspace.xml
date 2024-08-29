@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcb38905-9d37-4423-a96e-a86ec30f15f1" name="Changes" comment="Add classes in the services package">
-      <change afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/controllers/TransactionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/services/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/services/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/target/classes/com/example/team_project/controllers/BankController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/target/classes/com/example/team_project/controllers/BankController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/target/classes/com/example/team_project/services/BankService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/target/classes/com/example/team_project/services/BankService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,18 +29,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "AlbanoGiuseppePersechino"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AlbanoGiuseppePersechino&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Ilaria-93/Java25-Team1-FinalProject.git",
-    "accountId": "50f8b0a1-8ffa-417a-b564-bf8b1e270649"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ilaria-93/Java25-Team1-FinalProject.git&quot;,
+    &quot;accountId&quot;: &quot;50f8b0a1-8ffa-417a-b564-bf8b1e270649&quot;
   }
-}]]></component>
+}</component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
   </component>
@@ -58,16 +53,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TeamFinalProjectApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ASUS/Downloads/esercizi"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TeamFinalProjectApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/Downloads/esercizi&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

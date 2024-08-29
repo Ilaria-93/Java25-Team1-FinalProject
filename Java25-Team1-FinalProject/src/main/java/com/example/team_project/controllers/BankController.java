@@ -31,7 +31,7 @@ public class BankController {
     }
 
     // Retrieves a single bank by its ID
-    @GetMapping("/select/{id}")
+    @GetMapping("/search/{id}")
     public ResponseEntity<Bank> getBankById(@PathVariable Integer id) {
         Optional<Bank> bank = bankService.getBankById(id);
         if (bank.isPresent()) {

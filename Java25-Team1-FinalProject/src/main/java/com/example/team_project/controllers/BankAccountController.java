@@ -32,7 +32,7 @@ public class BankAccountController {
     }
 
     // Retrieve a single bank account by its ID
-    @GetMapping("/{id}")
+    @GetMapping("/search/{id}")
     public ResponseEntity<BankAccount> getBankAccountById(@PathVariable Integer id) {
         Optional<BankAccount> bankAccount = bankAccountService.findBankAccountById(id);
         if (bankAccount.isPresent()) {
@@ -43,7 +43,7 @@ public class BankAccountController {
     }
 
     // Delete a specific bank account by its ID
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteBankAccountById(@PathVariable Integer id) {
         try {
             bankAccountService.deleteBankAccountById(id);
