@@ -26,7 +26,11 @@ public class UserService {
 
     // Find a user by their ID
     public Optional<User> getUserById(Integer id) {
-        return userRepository.findById(id);
+        if (userRepository.existsById(id)) {
+            return userRepository.findById(id);
+        } else {
+            return Optional.empty();
+        }
     }
 
     // Update an existing user by their ID

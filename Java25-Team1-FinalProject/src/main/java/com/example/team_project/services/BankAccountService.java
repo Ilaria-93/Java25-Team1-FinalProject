@@ -17,8 +17,8 @@ public class BankAccountService {
     private BankAccountRepository bankAccountRepository;
 
     // Creates new bank accounts
-    public List<BankAccount> createBankAccounts(List<BankAccount> bankAccounts) {
-        return bankAccountRepository.saveAll(bankAccounts);
+    public BankAccount createBankAccount(BankAccount bankAccount) {
+        return bankAccountRepository.save(bankAccount);
     }
 
     // Retrieves the list of all bank accounts
@@ -35,11 +35,29 @@ public class BankAccountService {
         }
     }
 
-    // Deletes a specific bank account by its ID
-    public void deleteBankAccountById(Integer id) {
-        if (bankAccountRepository.existsById(id)) {
-            bankAccountRepository.deleteById(id);
+    // Update an existing user by their ID
+    public Optional<BankAccount> updateBankAccount(Integer id, BankAccount bankAccount) {
+        Optional<BankAccount> currentBankAccount = bankAccountRepository.findById(id);
+        if (currentBankAccount.isPresent()) {
+            currentBankAccount.get().setAccountNumber(bankAccount.getAccountNumber());
+            currentBankAccount.get().setAccountType(bankAccount.getAccountType());
+            currentBankAccount.get().setStatus(bankAccount.getStatus());
+            currentBankAccount.get().setBalance(bankAccount.getBalance());
+            currentBankAccount.get().setCreatedAt(bankAccount.getCreatedAt());
+            currentBankAccount.get().setUpdatedAt(bankAccount.getUpdatedAt());
+            currentBankAccount.get().setUser(bankAccount.getUser());
+            currentBankAccount.get().setBank(bankAccount.getBank());
+
+            bankAccountRepository.save(currentBankAccount.get());
+            return currentBankAccount;
+        } else {
+            return Optional.empty();
         }
+    }
+
+    // Deletes a specific bank account by its ID
+    public void deleteBankAccount(Integer id) {
+        bankAccountRepository.deleteById(id);
     }
 
     // Deposits a specified amount into a bank account

@@ -20,16 +20,14 @@ public class BankAccountController {
 
     // Create new bank accounts
     @PostMapping("/create")
-    public ResponseEntity<List<BankAccount>> createBankAccounts(@RequestBody List<BankAccount> bankAccounts) {
-        List<BankAccount> createdAccounts = bankAccountService.createBankAccounts(bankAccounts);
-        return ResponseEntity.ok(createdAccounts);
+    public BankAccount createBankAccount(@RequestBody BankAccount bankAccount) {
+        return bankAccountService.createBankAccount(bankAccount);
     }
 
     // Retrieve the list of all bank accounts
     @GetMapping("/list")
-    public ResponseEntity<List<BankAccount>> listBankAccounts() {
-        List<BankAccount> bankAccounts = bankAccountService.listBankAccounts();
-        return ResponseEntity.ok(bankAccounts);
+    public List<BankAccount> listBankAccounts() {
+        return bankAccountService.listBankAccounts();
     }
 
     // Retrieve a single bank account by its ID
@@ -43,11 +41,23 @@ public class BankAccountController {
         }
     }
 
+    // Update a user by ID
+    @PutMapping("/update/{id}")
+    public ResponseEntity<BankAccount> updateBankAccount(@PathVariable Integer id, @RequestBody BankAccount bankAccount) {
+        Optional<BankAccount> currentBankAccount = bankAccountService.updateBankAccount(id, bankAccount);
+        if (currentBankAccount.isPresent()) {
+            return ResponseEntity.ok(currentBankAccount.get());
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
     // Delete a specific bank account by its ID
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteBankAccountById(@PathVariable Integer id) {
-        if (bankAccountService.findBankAccountById(id).isPresent()) {
-            bankAccountService.deleteBankAccountById(id);
+        Optional<BankAccount> currentBankAccount = bankAccountService.findBankAccountById(id);
+        if (currentBankAccount.isPresent()) {
+            bankAccountService.deleteBankAccount(id);
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -58,8 +68,7 @@ public class BankAccountController {
     @PostMapping("/{accountId}/deposit")
     public ResponseEntity<BankAccount> deposit(@PathVariable Integer id, @RequestParam BigDecimal amount) {
         Optional<BankAccount> optBankAccount = bankAccountService.deposit(id, amount);
-
-        if (optBankAccount.isPresent()){
+        if (optBankAccount.isPresent()) {
             return ResponseEntity.ok(optBankAccount.get());
         } else
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -69,7 +78,6 @@ public class BankAccountController {
     @PostMapping("/{id}/withdraw")
     public ResponseEntity<BankAccount> withdraw(@PathVariable Integer id, @RequestParam BigDecimal amount) {
         Optional<BankAccount> optionalBankAccount = bankAccountService.withdraw(id, amount);
-
         if (optionalBankAccount.isPresent()) {
             return ResponseEntity.ok(optionalBankAccount.get());
         } else {
@@ -95,7 +103,6 @@ public class BankAccountController {
     @PostMapping("/{id}/apply-interest")
     public ResponseEntity<BankAccount> applyInterest(@PathVariable Integer id) {
         Optional<BankAccount> optionalBankAccount = bankAccountService.applyInterest(id);
-
         if (optionalBankAccount.isPresent()) {
             return ResponseEntity.ok(optionalBankAccount.get());
         } else {
@@ -107,7 +114,6 @@ public class BankAccountController {
     @GetMapping("/{id}/balance")
     public ResponseEntity<BigDecimal> checkBalance(@PathVariable Integer id) {
         Optional<BigDecimal> optionalBalance = bankAccountService.checkBalance(id);
-
         if (optionalBalance.isPresent()) {
             return ResponseEntity.ok(optionalBalance.get());
         } else {
