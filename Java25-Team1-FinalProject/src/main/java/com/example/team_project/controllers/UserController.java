@@ -25,7 +25,7 @@ public class UserController {
     }
 
     // Get a list of all users
-    @GetMapping
+    @GetMapping("/list")
     public List<User> getAllUsers() {
         return userService.listUsers();
     }
@@ -44,9 +44,9 @@ public class UserController {
 
     // Update a user by ID
     @PutMapping("/update/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User userDetails) {
+    public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User user) {
         try {
-            User updatedUser = userService.updateUser(id, userDetails);
+            User updatedUser = userService.updateUser(id, user);
             return ResponseEntity.ok(updatedUser);
         } catch (IllegalStateException e) {
             return ResponseEntity.notFound().build();

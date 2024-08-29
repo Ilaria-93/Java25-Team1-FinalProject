@@ -30,12 +30,22 @@ public class UserService {
     }
 
     // Update an existing user by their ID
-    public User updateUser(Integer id, User userDetails) {
-        if (userRepository.existsById(id)) {
-            userDetails.setId(id);
-            return userRepository.save(userDetails);
+    public Optional<User> updateUser(Integer id, User user) {
+        Optional<User> currentUser = userRepository.findById(id);
+        if (currentUser.isPresent()) {
+            currentUser.get().setEmail(user.getEmail());
+            currentUser.get().setFirstName(user.getFirstName());
+            currentUser.get().setLastName(user.getLastName());
+            currentUser.get().setPhone(user.getPhone());
+            currentUser.get().setDocumentType(user.getDocumentType());
+            currentUser.get().setDocumentNumber(user.getDocumentNumber());
+            currentUser.get().setEmployeeRole(user.getEmployeeRole());
+            currentUser.get().setIsActive(user.getIsActive());
+
+            userRepository.save(currentUser.get());
+            return currentUser;
         } else {
-            throw new IllegalStateException("User not found");
+            return Optional.empty();
         }
     }
 
