@@ -17,20 +17,20 @@ public class TransactionController {
     private TransactionService transactionService;
 
     // Create a new transaction
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Transaction> createTransaction(@RequestBody Transaction transaction) {
         Transaction createdTransaction = transactionService.createNewTransaction(transaction);
         return ResponseEntity.ok(createdTransaction);
     }
 
     // Get a list of all transactions
-    @GetMapping
+    @GetMapping("/list")
     public List<Transaction> getAllTransactions() {
         return transactionService.listTransactions();
     }
 
     // Get a transaction by ID
-    @GetMapping("/{id}")
+    @GetMapping("/search/{id}")
     public ResponseEntity<Transaction> getTransactionById(@PathVariable Integer id) {
         Optional<Transaction> transaction = transactionService.getTransactionById(id);
         if (transaction.isPresent()) {
@@ -41,7 +41,7 @@ public class TransactionController {
     }
 
     // Update a transaction by ID
-    @PutMapping("/{id}")
+    @PutMapping("update//{id}")
     public ResponseEntity<Transaction> updateTransaction(@PathVariable Integer id, @RequestBody Transaction transactionDetails) {
         try {
             Transaction updatedTransaction = transactionService.updateTransaction(id, transactionDetails);
@@ -52,7 +52,7 @@ public class TransactionController {
     }
 
     // Delete a transaction by ID
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteTransaction(@PathVariable Integer id) {
         try {
             transactionService.deleteTransaction(id);
