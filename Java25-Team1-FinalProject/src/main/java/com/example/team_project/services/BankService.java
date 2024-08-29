@@ -30,12 +30,16 @@ public class BankService {
     }
 
     // Updates the information of a bank
-    // TODO usa optional (bad request) - modificazione delle variabili no id
     public Optional<Bank> updateBank(Integer id, Bank updatedBank) {
         Optional<Bank> currentBankOpt = bankRepository.findById(id);
         if (currentBankOpt.isPresent()) {
+            currentBankOpt.get().setSwiftCode(updatedBank.getSwiftCode());
+            currentBankOpt.get().setName(updatedBank.getName());
+            currentBankOpt.get().setLocation(updatedBank.getLocation());
             currentBankOpt.get().setEmail(updatedBank.getEmail());
-            // TODO aggiungi gli altri campi
+            currentBankOpt.get().setPhone(updatedBank.getPhone());
+            currentBankOpt.get().setOpeningHours(updatedBank.getOpeningHours());
+
             bankRepository.save(currentBankOpt.get());
             return currentBankOpt;
         } else {
@@ -44,11 +48,7 @@ public class BankService {
     }
 
     // Deletes a specific bank by its ID
-    public void deleteBankById(Integer id) {
-        if (bankRepository.existsById(id)) {
-            bankRepository.deleteById(id);
-        } else {
-            throw new IllegalStateException("Bank not found");
-        }
+    public void deleteBank(Integer id) {
+        bankRepository.deleteById(id);
     }
 }

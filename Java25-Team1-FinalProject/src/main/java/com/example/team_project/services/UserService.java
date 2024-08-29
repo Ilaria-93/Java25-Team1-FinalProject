@@ -15,56 +15,55 @@ public class UserService {
     private UserRepository userRepository;
 
     // Create a new user in the database
-
     public User createNewUser(User user) {
         return userRepository.save(user);
     }
 
     // Retrieve a list of all users from the database
-
     public List<User> listUsers() {
         return userRepository.findAll();
     }
 
     // Find a user by their ID
-
     public Optional<User> getUserById(Integer id) {
         return userRepository.findById(id);
     }
 
     // Update an existing user by their ID
+    public Optional<User> updateUser(Integer id, User user) {
+        Optional<User> currentUser = userRepository.findById(id);
+        if (currentUser.isPresent()) {
+            currentUser.get().setEmail(user.getEmail());
+            currentUser.get().setFirstName(user.getFirstName());
+            currentUser.get().setLastName(user.getLastName());
+            currentUser.get().setPhone(user.getPhone());
+            currentUser.get().setDocumentType(user.getDocumentType());
+            currentUser.get().setDocumentNumber(user.getDocumentNumber());
+            currentUser.get().setEmployeeRole(user.getEmployeeRole());
+            currentUser.get().setIsActive(user.getIsActive());
 
-    public User updateUser(Integer id, User userDetails) {
-        if (userRepository.existsById(id)) {
-            userDetails.setId(id);
-            return userRepository.save(userDetails);
+            userRepository.save(currentUser.get());
+            return currentUser;
         } else {
-            throw new IllegalStateException("User not found");
+            return Optional.empty();
         }
     }
 
     // Delete a user by their ID
-
     public void deleteUser(Integer id) {
-        if (userRepository.existsById(id)) {
-            userRepository.deleteById(id);
-        } else {
-            throw new IllegalStateException("User not found");
-        }
-
+       userRepository.deleteById(id);
     }
 
     // Deactivate a user by setting their active status to false
-
-    public void deactivateUser(Integer id) {
-        Optional<User> optionalUser = userRepository.findById(id);
-        if (optionalUser.isPresent()) {
-            User user = optionalUser.get();
-            user.setActive(false);
+    public Optional<User> deactivateUser(Integer id) {
+        Optional<User> currentUser = userRepository.findById(id);
+        if (currentUser.isPresent()) {
+            User user = currentUser.get();
+            user.setIsActive(false);
             userRepository.save(user);
+            return Optional.of(user);
         } else {
-            throw new IllegalStateException("User not found");
+            return Optional.empty();
         }
-
     }
 }
