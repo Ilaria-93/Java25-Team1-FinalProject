@@ -43,62 +43,67 @@ public class BankAccountService {
     }
 
     // Deposits a specified amount into a bank account
-    public BankAccount deposit(Integer accountId, BigDecimal amount) {
+    public Optional<BankAccount> deposit(Integer accountId, BigDecimal amount) {
         Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(accountId);
         if (optionalBankAccount.isEmpty()) {
-            throw new IllegalStateException("Account not found");
+            return Optional.empty();
         }
         BankAccount bankAccount = optionalBankAccount.get();
         bankAccount.setBalance(bankAccount.getBalance().add(amount));
         bankAccount.setUpdatedAt(LocalDateTime.now());
-        return bankAccountRepository.save(bankAccount);
+        BankAccount updatedBankAccount = bankAccountRepository.save(bankAccount);
+        return Optional.of(updatedBankAccount);
     }
 
     // Withdraws a specified amount from a bank account
-    public BankAccount withdraw(Integer accountId, BigDecimal amount) {
+    public Optional<BankAccount> withdraw(Integer accountId, BigDecimal amount) {
         Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(accountId);
         if (optionalBankAccount.isEmpty()) {
-            throw new IllegalStateException("Account not found");
+            return Optional.empty();
         }
+
         BankAccount bankAccount = optionalBankAccount.get();
         if (bankAccount.getBalance().compareTo(amount) < 0) {
-            throw new IllegalStateException("Insufficient funds");
+            return Optional.empty();
         }
+
         bankAccount.setBalance(bankAccount.getBalance().subtract(amount));
         bankAccount.setUpdatedAt(LocalDateTime.now());
-        return bankAccountRepository.save(bankAccount);
+        BankAccount updatedBankAccount = bankAccountRepository.save(bankAccount);
+        return Optional.of(updatedBankAccount);
     }
 
-    // Method to transfer a certain amount between two bank accounts
-    public BankAccount transfer(Integer fromAccountId, Integer toAccountId, BigDecimal amount) {
-        Optional<BankAccount> optionalFromAccount = bankAccountRepository.findById(fromAccountId);
-        if (optionalFromAccount.isEmpty()) {
-            throw new IllegalStateException("Source account not found");
-        }
-        Optional<BankAccount> optionalToAccount = bankAccountRepository.findById(toAccountId);
-        if (optionalToAccount.isEmpty()) {
-            throw new IllegalStateException("Destination account not found");
-        }
 
+    // Method to transfer a certain amount between two bank accounts
+    public Optional<BankAccount> transfer(Integer fromAccountId, Integer toAccountId, BigDecimal amount) {
+        Optional<BankAccount> optionalFromAccount = bankAccountRepository.findById(fromAccountId);
+        Optional<BankAccount> optionalToAccount = bankAccountRepository.findById(toAccountId);
+
+        if (optionalFromAccount.isEmpty() || optionalToAccount.isEmpty()) {
+            return Optional.empty();
+        }
         BankAccount fromAccount = optionalFromAccount.get();
         BankAccount toAccount = optionalToAccount.get();
 
         if (fromAccount.getBalance().compareTo(amount) < 0) {
-            throw new IllegalStateException("Insufficient funds");
+            return Optional.empty();
         }
-
         fromAccount.setBalance(fromAccount.getBalance().subtract(amount));
         toAccount.setBalance(toAccount.getBalance().add(amount));
+        fromAccount.setUpdatedAt(LocalDateTime.now());
+        toAccount.setUpdatedAt(LocalDateTime.now());
 
         bankAccountRepository.save(fromAccount);
-        return bankAccountRepository.save(toAccount);
+        bankAccountRepository.save(toAccount);
+
+        return Optional.of(toAccount);
     }
 
     // Method to apply interest to a bank account based on its type
-    public BankAccount applyInterest(Integer accountId) {
+    public Optional<BankAccount> applyInterest(Integer accountId) {
         Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(accountId);
         if (optionalBankAccount.isEmpty()) {
-            throw new IllegalStateException("Account not found");
+            return Optional.empty();
         }
 
         BankAccount bankAccount = optionalBankAccount.get();
@@ -107,15 +112,18 @@ public class BankAccountService {
         bankAccount.setBalance(bankAccount.getBalance().add(interest));
         bankAccount.setUpdatedAt(LocalDateTime.now());
 
-        return bankAccountRepository.save(bankAccount);
+        BankAccount updatedBankAccount = bankAccountRepository.save(bankAccount);
+        return Optional.of(updatedBankAccount);
     }
 
+
     // Method to check the balance of a bank account
-    public BigDecimal checkBalance(Integer accountId) {
+    public Optional<BigDecimal> checkBalance(Integer accountId) {
         Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(accountId);
         if (optionalBankAccount.isEmpty()) {
-            throw new IllegalStateException("Account not found");
+            return Optional.empty();
         }
-        return optionalBankAccount.get().getBalance();
+        return Optional.of(optionalBankAccount.get().getBalance());
     }
+
 }

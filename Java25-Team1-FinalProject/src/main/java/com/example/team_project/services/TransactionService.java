@@ -30,25 +30,23 @@ public class TransactionService {
     }
 
     // Update an existing transaction by its ID
-    public Transaction updateTransaction(Integer id, Transaction transactionDetails) {
+    public Optional<Transaction> updateTransaction(Integer id, Transaction updatedtransaction) {
         Optional<Transaction> optionalTransaction = transactionRepository.findById(id);
         if (optionalTransaction.isPresent()) {
-            Transaction transaction = optionalTransaction.get();
-            transaction.setAmount(transactionDetails.getAmount());
-            transaction.setDate(transactionDetails.getDate());
-            transaction.setType(transactionDetails.getType());
-            return transactionRepository.save(transaction);
+            optionalTransaction.get().setType(updatedtransaction.getType());
+            optionalTransaction.get().setStatus(updatedtransaction.getStatus());
+            optionalTransaction.get().setAmount(updatedtransaction.getAmount());
+            optionalTransaction.get().setDate(updatedtransaction.getDate());
+            optionalTransaction.get().setFromAccount(updatedtransaction.getFromAccount());
+            transactionRepository.save(optionalTransaction.get());
+            return optionalTransaction;
         } else {
-            throw new IllegalStateException("Transaction not found");
+            return Optional.empty();
         }
     }
 
     // Delete a transaction by its ID
     public void deleteTransaction(Integer id) {
-        if (transactionRepository.existsById(id)) {
-            transactionRepository.deleteById(id);
-        } else {
-            throw new IllegalStateException("Transaction not found");
-        }
+       transactionRepository.deleteById(id);
     }
 }

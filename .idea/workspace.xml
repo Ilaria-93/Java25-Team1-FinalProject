@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bcb38905-9d37-4423-a96e-a86ec30f15f1" name="Changes" comment="Add classes in the services package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/controllers/BankAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/controllers/BankAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/controllers/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/controllers/TransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/services/BankAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/services/BankAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/services/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java25-Team1-FinalProject/src/main/java/com/example/team_project/services/TransactionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +60,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.TeamFinalProjectApplication.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sistemazioneMetodi&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/Downloads/esercizi&quot;
