@@ -59,7 +59,7 @@ public class UserService {
         Optional<User> currentUser = userRepository.findById(id);
         if (currentUser.isPresent()) {
             User user = currentUser.get();
-            user.setActive(false);
+            user.setIsActive(false);
             userRepository.save(user);
             return Optional.of(user);
         } else {
