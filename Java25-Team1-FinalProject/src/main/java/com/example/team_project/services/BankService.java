@@ -48,7 +48,7 @@ public class BankService {
     }
 
     // Deletes a specific bank by its ID
-    public void deleteBankById(Integer id) {
+    public void deleteBank(Integer id) {
         bankRepository.deleteById(id);
     }
 }

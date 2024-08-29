@@ -19,9 +19,8 @@ public class BankController {
 
     // Creates new banks
     @PostMapping("/create")
-    public ResponseEntity<Bank> createBank(@RequestBody Bank bank) {
-        Bank createdBank = bankService.createBank(bank);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdBank);
+    public Bank createBank(@RequestBody Bank bank) {
+        return bankService.createBank(bank);
     }
 
     // Retrieves the list of all banks
@@ -32,35 +31,35 @@ public class BankController {
 
     // Retrieves a single bank by its ID
     @GetMapping("/search/{id}")
-    public ResponseEntity<Bank> getBankById(@PathVariable Integer id) {
+    public ResponseEntity<Bank> searchBankById(@PathVariable Integer id) {
         Optional<Bank> bank = bankService.getBankById(id);
         if (bank.isPresent()) {
             return ResponseEntity.ok(bank.get());
         } else {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
     // Updates the information of a bank
     @PutMapping("/update/{id}")
-    public ResponseEntity<Bank> updateBank(@PathVariable Integer id, @RequestBody Bank updatedBank) {
-        Optional<Bank> bank = bankService.updateBank(id, updatedBank);
-        if (bank.isPresent()){
-            return ResponseEntity.ok(bank.get());
+    public ResponseEntity<Bank> updateBank(@PathVariable Integer id, @RequestBody Bank bank) {
+        Optional<Bank> currentBank = bankService.updateBank(id, bank);
+        if (currentBank.isPresent()){
+            return ResponseEntity.ok(currentBank.get());
         } else {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
     // Deletes a specific bank by its ID
-    // TODO sistema metodo
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteBankById(@PathVariable Integer id) {
-        try {
-            bankService.deleteBankById(id);
+        Optional<Bank> currentBank = bankService.getBankById(id);
+        if (currentBank.isPresent()) {
+            bankService.deleteBank(id);
             return ResponseEntity.noContent().build();
-        } catch (IllegalStateException e) {
-            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 }
