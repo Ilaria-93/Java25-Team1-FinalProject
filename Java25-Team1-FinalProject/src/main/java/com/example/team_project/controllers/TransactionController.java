@@ -11,30 +11,28 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/transactions")
+@RequestMapping("/transactions")
 public class TransactionController {
 
     @Autowired
     private TransactionService transactionService;
 
-
     // Create a new transaction
     @PostMapping("/create")
     public Transaction createTransaction(@RequestBody Transaction transaction) {
-        return transactionService.createNewTransaction(transaction);
+        return transactionService.createTransaction(transaction);
     }
-
 
     // Get a list of all transactions
     @GetMapping("/list")
-    public List<Transaction> getAllTransactions() {
+    public List<Transaction> listTransactions() {
         return transactionService.listTransactions();
     }
 
     // Get a transaction by ID
     @GetMapping("/search/{id}")
-    public ResponseEntity<Transaction> getTransactionById(@PathVariable Integer id) {
-        Optional<Transaction> transaction = transactionService.getTransactionById(id);
+    public ResponseEntity<Transaction> searchTransactionById(@PathVariable Integer id) {
+        Optional<Transaction> transaction = transactionService.searchTransactionById(id);
         if (transaction.isPresent()) {
             return ResponseEntity.ok(transaction.get());
         } else {
@@ -44,11 +42,11 @@ public class TransactionController {
 
     // Update a transaction by ID
     @PutMapping("update//{id}")
-    public ResponseEntity<Transaction> updateTransaction(@PathVariable Integer id, @RequestBody Transaction updatedTransaction) {
-        Optional<Transaction> currentTransaction = transactionService.updateTransaction(id, updatedTransaction);
-        if(currentTransaction.isPresent()){
+    public ResponseEntity<Transaction> updateTransaction(@PathVariable Integer id, @RequestBody Transaction transaction) {
+        Optional<Transaction> currentTransaction = transactionService.updateTransaction(id, transaction);
+        if (currentTransaction.isPresent()) {
             return ResponseEntity.ok(currentTransaction.get());
-        }else {
+        } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
@@ -56,8 +54,8 @@ public class TransactionController {
     // Delete a transaction by ID
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteTransaction(@PathVariable Integer id) {
-        Optional<Transaction> transaction = transactionService.getTransactionById(id);
-        if(transaction.isPresent()){
+        Optional<Transaction> transaction = transactionService.searchTransactionById(id);
+        if (transaction.isPresent()) {
             transactionService.deleteTransaction(id);
             return ResponseEntity.noContent().build();
         } else {

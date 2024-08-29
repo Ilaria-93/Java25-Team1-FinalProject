@@ -3,7 +3,6 @@ package com.example.team_project.entities;
 import com.example.team_project.enumerated.DocumentTypeEnum;
 import com.example.team_project.enumerated.UserRoleEnum;
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 
 @Entity
 @Table(name = "users")

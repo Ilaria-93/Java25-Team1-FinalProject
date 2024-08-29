@@ -27,7 +27,7 @@ public class BankAccountService {
     }
 
     // Retrieves a single bank account by its ID
-    public Optional<BankAccount> findBankAccountById(Integer id) {
+    public Optional<BankAccount> searchBankAccountById(Integer id) {
         if (bankAccountRepository.existsById(id)) {
             return bankAccountRepository.findById(id);
         } else {
@@ -37,19 +37,19 @@ public class BankAccountService {
 
     // Update an existing user by their ID
     public Optional<BankAccount> updateBankAccount(Integer id, BankAccount bankAccount) {
-        Optional<BankAccount> currentBankAccount = bankAccountRepository.findById(id);
-        if (currentBankAccount.isPresent()) {
-            currentBankAccount.get().setAccountNumber(bankAccount.getAccountNumber());
-            currentBankAccount.get().setAccountType(bankAccount.getAccountType());
-            currentBankAccount.get().setStatus(bankAccount.getStatus());
-            currentBankAccount.get().setBalance(bankAccount.getBalance());
-            currentBankAccount.get().setCreatedAt(bankAccount.getCreatedAt());
-            currentBankAccount.get().setUpdatedAt(bankAccount.getUpdatedAt());
-            currentBankAccount.get().setUser(bankAccount.getUser());
-            currentBankAccount.get().setBank(bankAccount.getBank());
+        Optional<BankAccount> currentBankAccountOpt = bankAccountRepository.findById(id);
+        if (currentBankAccountOpt.isPresent()) {
+            currentBankAccountOpt.get().setAccountNumber(bankAccount.getAccountNumber());
+            currentBankAccountOpt.get().setAccountType(bankAccount.getAccountType());
+            currentBankAccountOpt.get().setStatus(bankAccount.getStatus());
+            currentBankAccountOpt.get().setBalance(bankAccount.getBalance());
+            currentBankAccountOpt.get().setCreatedAt(bankAccount.getCreatedAt());
+            currentBankAccountOpt.get().setUpdatedAt(bankAccount.getUpdatedAt());
+            currentBankAccountOpt.get().setUser(bankAccount.getUser());
+            currentBankAccountOpt.get().setBank(bankAccount.getBank());
 
-            bankAccountRepository.save(currentBankAccount.get());
-            return currentBankAccount;
+            bankAccountRepository.save(currentBankAccountOpt.get());
+            return currentBankAccountOpt;
         } else {
             return Optional.empty();
         }
@@ -143,5 +143,4 @@ public class BankAccountService {
         }
         return Optional.of(optionalBankAccount.get().getBalance());
     }
-
 }

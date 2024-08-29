@@ -20,7 +20,7 @@ public class UserController {
     // Create a new user
     @PostMapping("/create")
     public User createUser(@RequestBody User user) {
-        return userService.createNewUser(user);
+        return userService.createUser(user);
     }
 
     // Get a list of all users
@@ -32,7 +32,7 @@ public class UserController {
     // Get a user by ID
     @GetMapping("/search/{id}")
     public ResponseEntity<User> searchUserById(@PathVariable Integer id) {
-        Optional<User> user = userService.getUserById(id);
+        Optional<User> user = userService.searchUserById(id);
         if (user.isPresent()) {
             return ResponseEntity.ok(user.get());
         } else {
@@ -55,7 +55,7 @@ public class UserController {
     // Delete a user by ID
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
-        Optional<User> currentUser = userService.getUserById(id);
+        Optional<User> currentUser = userService.searchUserById(id);
         if (currentUser.isPresent()) {
             userService.deleteUser(id);
             return ResponseEntity.noContent().build();
@@ -65,9 +65,9 @@ public class UserController {
     }
 
     // Deactivate a user by ID
-    @PatchMapping("/{id}/deactivate")
+    @PatchMapping("/deactivate/{id}")
     public ResponseEntity<Void> deactivateUser(@PathVariable Integer id) {
-        Optional<User> currentUser = userService.getUserById(id);
+        Optional<User> currentUser = userService.searchUserById(id);
         if (currentUser.isPresent()) {
             userService.deactivateUser(id);
             return ResponseEntity.noContent().build();

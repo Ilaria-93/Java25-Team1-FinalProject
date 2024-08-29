@@ -15,7 +15,7 @@ public class TransactionService {
     private TransactionRepository transactionRepository;
 
     // Create a new transaction
-    public Transaction createNewTransaction(Transaction transaction) {
+    public Transaction createTransaction(Transaction transaction) {
         return transactionRepository.save(transaction);
     }
 
@@ -25,21 +25,22 @@ public class TransactionService {
     }
 
     // Find a transaction by its ID
-    public Optional<Transaction> getTransactionById(Integer id) {
+    public Optional<Transaction> searchTransactionById(Integer id) {
         return transactionRepository.findById(id);
     }
 
     // Update an existing transaction by its ID
-    public Optional<Transaction> updateTransaction(Integer id, Transaction updatedtransaction) {
-        Optional<Transaction> optionalTransaction = transactionRepository.findById(id);
-        if (optionalTransaction.isPresent()) {
-            optionalTransaction.get().setType(updatedtransaction.getType());
-            optionalTransaction.get().setStatus(updatedtransaction.getStatus());
-            optionalTransaction.get().setAmount(updatedtransaction.getAmount());
-            optionalTransaction.get().setDate(updatedtransaction.getDate());
-            optionalTransaction.get().setFromAccount(updatedtransaction.getFromAccount());
-            transactionRepository.save(optionalTransaction.get());
-            return optionalTransaction;
+    public Optional<Transaction> updateTransaction(Integer id, Transaction transaction) {
+        Optional<Transaction> currentTransactionOpt = transactionRepository.findById(id);
+        if (currentTransactionOpt.isPresent()) {
+            currentTransactionOpt.get().setType(transaction.getType());
+            currentTransactionOpt.get().setStatus(transaction.getStatus());
+            currentTransactionOpt.get().setAmount(transaction.getAmount());
+            currentTransactionOpt.get().setDate(transaction.getDate());
+            currentTransactionOpt.get().setFromAccount(transaction.getFromAccount());
+
+            transactionRepository.save(currentTransactionOpt.get());
+            return currentTransactionOpt;
         } else {
             return Optional.empty();
         }
@@ -47,6 +48,6 @@ public class TransactionService {
 
     // Delete a transaction by its ID
     public void deleteTransaction(Integer id) {
-       transactionRepository.deleteById(id);
+        transactionRepository.deleteById(id);
     }
 }

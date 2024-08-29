@@ -17,7 +17,7 @@ public enum BankAccountTypeEnum {
     private final Double interestRate;
     private final Integer creditLimit;
 
-    BankAccountTypeEnum (String description, Double interestRate, Integer creditLimit) {
+    BankAccountTypeEnum(String description, Double interestRate, Integer creditLimit) {
         this.description = description;
         this.interestRate = interestRate;
         this.creditLimit = creditLimit;

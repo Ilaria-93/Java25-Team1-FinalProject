@@ -25,20 +25,20 @@ public class BankService {
     }
 
     // Retrieves a single bank by its ID
-    public Optional<Bank> getBankById(Integer id) {
+    public Optional<Bank> searchBankById(Integer id) {
         return bankRepository.findById(id);
     }
 
     // Updates the information of a bank
-    public Optional<Bank> updateBank(Integer id, Bank updatedBank) {
+    public Optional<Bank> updateBank(Integer id, Bank bank) {
         Optional<Bank> currentBankOpt = bankRepository.findById(id);
         if (currentBankOpt.isPresent()) {
-            currentBankOpt.get().setSwiftCode(updatedBank.getSwiftCode());
-            currentBankOpt.get().setName(updatedBank.getName());
-            currentBankOpt.get().setLocation(updatedBank.getLocation());
-            currentBankOpt.get().setEmail(updatedBank.getEmail());
-            currentBankOpt.get().setPhone(updatedBank.getPhone());
-            currentBankOpt.get().setOpeningHours(updatedBank.getOpeningHours());
+            currentBankOpt.get().setSwiftCode(bank.getSwiftCode());
+            currentBankOpt.get().setName(bank.getName());
+            currentBankOpt.get().setLocation(bank.getLocation());
+            currentBankOpt.get().setEmail(bank.getEmail());
+            currentBankOpt.get().setPhone(bank.getPhone());
+            currentBankOpt.get().setOpeningHours(bank.getOpeningHours());
 
             bankRepository.save(currentBankOpt.get());
             return currentBankOpt;
