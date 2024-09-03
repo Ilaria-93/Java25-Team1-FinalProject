@@ -1,11 +1,13 @@
 package com.example.team_project.entities;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 
 import jakarta.persistence.Entity;
 
 @Entity
 @Table(name = "banks")
+@JsonPropertyOrder({ "id", "swiftCode", "name", "location", "email", "phone", "openingHours" })
 public class Bank {
 
     @Id
