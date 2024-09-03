@@ -2,6 +2,8 @@ package com.example.team_project.entities;
 
 import com.example.team_project.enumerated.BankAccountTypeEnum;
 import com.example.team_project.enumerated.UserStatusEnum;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
 
@@ -93,8 +95,14 @@ public class BankAccount {
         this.status = status;
     }
 
+    @JsonIgnore
     public BigDecimal getBalance() {
-        return balance.setScale(2, RoundingMode.UP);
+        return balance;
+    }
+
+    @JsonProperty
+    public BigDecimal getFormattedBalance() {
+        return balance != null ? balance.setScale(2, RoundingMode.UP) : BigDecimal.ZERO;
     }
 
     public void setBalance(BigDecimal balance) {
