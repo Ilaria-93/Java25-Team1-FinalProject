@@ -41,7 +41,7 @@ public class BankAccountController {
         }
     }
 
-    // Update a user by ID
+    // Update a bankAccount by ID
     @PutMapping("/update/{id}")
     public ResponseEntity<BankAccount> updateBankAccount(@PathVariable Integer id, @RequestBody BankAccount bankAccount) {
         Optional<BankAccount> currentBankAccount = bankAccountService.updateBankAccount(id, bankAccount);
@@ -52,7 +52,7 @@ public class BankAccountController {
         }
     }
 
-    // Delete a specific bank account by its ID
+    // Delete a specific bank account by ID
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteBankAccount(@PathVariable Integer id) {
         Optional<BankAccount> currentBankAccount = bankAccountService.searchBankAccountById(id);

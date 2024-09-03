@@ -3,8 +3,10 @@ package com.example.team_project.entities;
 import com.example.team_project.enumerated.BankAccountTypeEnum;
 import com.example.team_project.enumerated.UserStatusEnum;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Digits;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 
 @Entity
@@ -92,7 +94,7 @@ public class BankAccount {
     }
 
     public BigDecimal getBalance() {
-        return balance;
+        return balance.setScale(2, RoundingMode.UP);
     }
 
     public void setBalance(BigDecimal balance) {
