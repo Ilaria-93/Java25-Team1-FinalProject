@@ -34,22 +34,14 @@ public class Bank {
     public Bank() {
     }
 
-    public Bank(String email, Integer id, String location, String name, String openingHours, String phone, String swiftCode) {
-        this.email = email;
+    public Bank(Integer id, String swiftCode, String name, String location, String email, String phone, String openingHours) {
         this.id = id;
-        this.location = location;
-        this.name = name;
-        this.openingHours = openingHours;
-        this.phone = phone;
         this.swiftCode = swiftCode;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
+        this.name = name;
+        this.location = location;
         this.email = email;
+        this.phone = phone;
+        this.openingHours = openingHours;
     }
 
     public Integer getId() {
@@ -60,12 +52,12 @@ public class Bank {
         this.id = id;
     }
 
-    public String getLocation() {
-        return location;
+    public String getSwiftCode() {
+        return swiftCode;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setSwiftCode(String swiftCode) {
+        this.swiftCode = swiftCode;
     }
 
     public String getName() {
@@ -76,12 +68,20 @@ public class Bank {
         this.name = name;
     }
 
-    public String getOpeningHours() {
-        return openingHours;
+    public String getLocation() {
+        return location;
     }
 
-    public void setOpeningHours(String openingHours) {
-        this.openingHours = openingHours;
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhone() {
@@ -92,11 +92,11 @@ public class Bank {
         this.phone = phone;
     }
 
-    public String getSwiftCode() {
-        return swiftCode;
+    public String getOpeningHours() {
+        return openingHours;
     }
 
-    public void setSwiftCode(String swiftCode) {
-        this.swiftCode = swiftCode;
+    public void setOpeningHours(String openingHours) {
+        this.openingHours = openingHours;
     }
 }

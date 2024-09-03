@@ -2,10 +2,12 @@ package com.example.team_project.entities;
 
 import com.example.team_project.enumerated.DocumentTypeEnum;
 import com.example.team_project.enumerated.UserRoleEnum;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
+@JsonPropertyOrder({ "id", "email", "firstName", "lastName", "phone", "documentType", "documentNumber", "employeeRole", "isActive" })
 public class User {
 
     @Id

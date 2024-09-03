@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5303d78-e352-4939-bf55-0e7488610386" name="Changes" comment="Sistemazione codice">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/team_project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/team_project/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/TransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/TransactionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankAccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankAccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/services/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/services/TransactionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/services/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="develop" />
+        <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -44,7 +59,7 @@
     "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Lorenzo/Desktop/Web Development/Develhope/Progetto finale1/Java25-Team1-FinalProject"
+    "last_opened_file_path": "C:/Users/Lorenzo/Desktop/Web Development/Develhope/Spring Boot/file-upload-download"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -149,7 +164,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724839660697</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Sistemazione codice in BankController">
+      <option name="closed" value="true" />
+      <created>1724938606193</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1724938606193</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Sistemazione codice">
+      <option name="closed" value="true" />
+      <created>1724940070359</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1724940070359</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +201,7 @@
     <MESSAGE value="Meeting" />
     <MESSAGE value="Sistemazione enum e fix delle entities" />
     <MESSAGE value="Fix BankService" />
+    <MESSAGE value="Sistemazione codice in BankController" />
     <MESSAGE value="Sistemazione codice" />
     <option name="LAST_COMMIT_MESSAGE" value="Sistemazione codice" />
   </component>
