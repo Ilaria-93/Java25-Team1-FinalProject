@@ -17,19 +17,19 @@ public class BankController {
     @Autowired
     private BankService bankService;
 
-    // Creates new banks
+    // Create new bank
     @PostMapping("/create")
     public Bank createBank(@RequestBody Bank bank) {
         return bankService.createBank(bank);
     }
 
-    // Retrieves the list of all banks
+    // Retrieve the list of all banks
     @GetMapping("/list")
     public List<Bank> listBanks() {
         return bankService.listBanks();
     }
 
-    // Retrieves a single bank by its ID
+    // Retrieve a single bank by its ID
     @GetMapping("/search/{id}")
     public ResponseEntity<Bank> searchBankById(@PathVariable Integer id) {
         Optional<Bank> bank = bankService.searchBankById(id);
@@ -40,7 +40,7 @@ public class BankController {
         }
     }
 
-    // Updates the information of a bank
+    // Update the information of a bank
     @PutMapping("/update/{id}")
     public ResponseEntity<Bank> updateBank(@PathVariable Integer id, @RequestBody Bank bank) {
         Optional<Bank> currentBank = bankService.updateBank(id, bank);
@@ -51,7 +51,7 @@ public class BankController {
         }
     }
 
-    // Deletes a specific bank by its ID
+    // Delete a specific bank by its ID
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteBank(@PathVariable Integer id) {
         Optional<Bank> currentBank = bankService.searchBankById(id);

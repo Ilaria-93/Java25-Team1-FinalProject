@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5303d78-e352-4939-bf55-0e7488610386" name="Changes" comment="Sistemazione codice">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/team_project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/team_project/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankAccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/BankController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/TransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/TransactionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankAccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankAccountService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/services/BankService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/services/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/services/TransactionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/team_project/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/team_project/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/team_project/controllers/BankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/team_project/controllers/BankController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724940070359</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Sistemazione codice">
+      <option name="closed" value="true" />
+      <created>1725367388361</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1725367388361</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
