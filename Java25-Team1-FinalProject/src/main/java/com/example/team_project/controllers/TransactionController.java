@@ -41,7 +41,7 @@ public class TransactionController {
     }
 
     // Update a transaction by ID
-    @PutMapping("update//{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Transaction> updateTransaction(@PathVariable Integer id, @RequestBody Transaction transaction) {
         Optional<Transaction> currentTransaction = transactionService.updateTransaction(id, transaction);
         if (currentTransaction.isPresent()) {
