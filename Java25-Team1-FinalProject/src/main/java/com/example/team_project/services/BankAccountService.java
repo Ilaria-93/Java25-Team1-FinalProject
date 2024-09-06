@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +19,10 @@ public class BankAccountService {
 
     // Creates new bank accounts
     public BankAccount createBankAccount(BankAccount bankAccount) {
+        if (bankAccount.getBalance() == null) {
+            bankAccount.setBalance(BigDecimal.ZERO);
+        } else { bankAccount.setBalance(bankAccount.getBalance().setScale(2, RoundingMode.UP));
+        }
         return bankAccountRepository.save(bankAccount);
     }
 

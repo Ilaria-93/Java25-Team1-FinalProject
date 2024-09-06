@@ -2,6 +2,7 @@ package com.example.team_project.entities;
 
 import com.example.team_project.enumerated.BankAccountTypeEnum;
 import com.example.team_project.enumerated.UserStatusEnum;
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -95,12 +96,12 @@ public class BankAccount {
         this.status = status;
     }
 
-    @JsonIgnore
+
     public BigDecimal getBalance() {
         return balance;
     }
 
-    @JsonProperty
+    @JsonGetter("balance")
     public BigDecimal getFormattedBalance() {
         return balance != null ? balance.setScale(2, RoundingMode.UP) : BigDecimal.ZERO;
     }
